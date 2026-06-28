@@ -32,16 +32,23 @@
 
             <div class="privacy-content">
                 <h2>1. Introduction</h2>
-                <p>Welcome to Jam Room ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application Jam Room (the "App").</p>
+                <p>Welcome to Jam Room ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy in accordance with the General Data Protection Regulation (GDPR) and applicable Austrian and European Union data protection laws. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application Jam Room (the "App").</p>
 
-                <h2>2. Information We Collect</h2>
+                <h2>2. Data Controller</h2>
+                <p>The data controller responsible for your personal data is:</p>
+                <p>Daria Lazepko (sole proprietor)<br>
+                Jam Room<br>
+                <!-- TODO: Add your registered business address here before launch -->
+                Austria<br>
+                Contact: <a href="mailto:support@jamroom.eu">support@jamroom.eu</a></p>
+
+                <h2>3. Information We Collect</h2>
 
                 <h3>Account Information</h3>
                 <p>When you create an account, we collect:</p>
                 <ul>
                     <li>Email address</li>
                     <li>Authentication credentials (managed securely through Apple Sign-In, Google Sign-In, or email/password)</li>
-                    <li>Display name (if provided)</li>
                 </ul>
 
                 <h3>User Content</h3>
@@ -50,68 +57,142 @@
                     <li>Song projects including lyrics, chords, and song metadata</li>
                     <li>Voice recordings and audio memos</li>
                     <li>Project folders and organizational data</li>
-                    <li>Notes and text content</li>
                 </ul>
 
-                <h3>Usage Data</h3>
-                <p>We automatically collect certain information about your device and usage of the App, including:</p>
+                <h3>Subscription Data</h3>
                 <ul>
-                    <li>Device type and operating system version</li>
-                    <li>App usage statistics (e.g., feature usage frequency)</li>
-                    <li>Subscription status and usage limits</li>
+                    <li>Subscription status (Free or Pro)</li>
+                    <li>Feature usage limits (transcription minutes, AI suggestion count)</li>
                 </ul>
 
-                <h2>3. How We Use Your Information</h2>
+                <p>We do not collect analytics, tracking data, device identifiers, or location data.</p>
+
+                <h2>4. Legal Basis for Processing (GDPR Art. 6)</h2>
+                <p>We process your personal data based on the following legal grounds:</p>
+                <ul>
+                    <li><strong>Contract performance (Art. 6(1)(b)):</strong> To provide the App's core functionality — storing your projects, syncing data, managing your account and subscription.</li>
+                    <li><strong>Consent (Art. 6(1)(a)):</strong> For optional features such as AI-powered line suggestions and rhyme generation, which send your lyrics content to third-party AI providers for processing. You activate these features voluntarily.</li>
+                    <li><strong>Legitimate interest (Art. 6(1)(f)):</strong> To maintain security, prevent abuse, and improve the App.</li>
+                </ul>
+
+                <h2>5. How We Use Your Information</h2>
                 <p>We use the information we collect to:</p>
                 <ul>
                     <li>Provide, maintain, and improve the App</li>
                     <li>Sync your content across your devices (for Pro subscribers)</li>
-                    <li>Process voice recordings through AI transcription services</li>
+                    <li>Process voice recordings through on-device AI transcription</li>
                     <li>Provide AI-powered features such as line suggestions and rhyme finding</li>
                     <li>Manage your account and subscription</li>
-                    <li>Communicate with you about updates and changes to the App</li>
+                    <li>Send transactional emails (e.g., email confirmation on sign-up)</li>
                 </ul>
 
-                <h2>4. Voice Recordings & AI Processing</h2>
-                <p>When you use the voice transcription feature, your audio recordings are processed using on-device AI technology (WhisperKit). Voice data is processed locally on your device and is not sent to external servers for transcription. Transcribed text is stored as part of your project data and synced if you are a Pro subscriber.</p>
+                <h2>6. Voice Recordings & AI Processing</h2>
+                <p>When you use the voice transcription feature, your audio recordings are processed using on-device AI technology (WhisperKit). Voice data is processed locally on your device and is <strong>not sent to external servers</strong> for transcription. Transcribed text is stored as part of your project data and synced to our servers only if you are a signed-in Pro subscriber.</p>
+                <p>AI-powered features (line suggestions, AI rhymes) send your lyrics text to third-party AI providers (OpenAI) for processing. This data is used solely to generate suggestions. OpenAI may retain API data for up to 30 days for abuse and safety monitoring, after which it is deleted. Your data is not used to train AI models.</p>
 
-                <h2>5. Data Storage & Security</h2>
+                <h2>7. Data Storage & Security</h2>
                 <p>Your data is stored securely using industry-standard practices:</p>
                 <ul>
-                    <li>Local data is stored on your device using Apple's SwiftData framework</li>
-                    <li>Cloud-synced data (Pro feature) is stored on Supabase servers with encryption at rest and in transit</li>
-                    <li>Authentication is handled through secure third-party providers (Apple, Google) or encrypted credential storage</li>
+                    <li><strong>Local storage:</strong> Data is stored on your device using Apple's SwiftData framework. If you use the App without an account, your data never leaves your device.</li>
+                    <li><strong>Cloud storage:</strong> Synced data (Pro feature) is stored on Supabase servers located in the <strong>European Union (Frankfurt, Germany)</strong>, encrypted at rest and in transit.</li>
+                    <li><strong>Authentication:</strong> Handled through secure third-party providers (Apple, Google) or encrypted credential storage via Supabase Auth.</li>
+                    <li><strong>Email service:</strong> Transactional emails are sent via Resend, which processes your email address to deliver confirmation emails.</li>
                 </ul>
 
-                <h2>6. Data Sharing</h2>
-                <p>We do not sell your personal information. We may share your data only in the following circumstances:</p>
+                <h2>8. Third-Party Services & Data Processors</h2>
+                <p>We use the following third-party services to operate the App. Each acts as a data processor under GDPR:</p>
+                <table class="privacy-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Purpose</th>
+                            <th>Data Shared</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Supabase</td>
+                            <td>Cloud database, authentication, file storage</td>
+                            <td>Email, projects, lyrics, chords, voice recordings</td>
+                            <td>EU (Frankfurt)</td>
+                        </tr>
+                        <tr>
+                            <td>Apple Sign-In</td>
+                            <td>Authentication</td>
+                            <td>Email (if shared by user)</td>
+                            <td>Global</td>
+                        </tr>
+                        <tr>
+                            <td>Google Sign-In</td>
+                            <td>Authentication</td>
+                            <td>Email</td>
+                            <td>Global</td>
+                        </tr>
+                        <tr>
+                            <td>OpenAI</td>
+                            <td>AI line suggestions, AI rhymes</td>
+                            <td>Lyrics text (per request, not stored)</td>
+                            <td>USA</td>
+                        </tr>
+                        <tr>
+                            <td>Resend</td>
+                            <td>Transactional emails</td>
+                            <td>Email address</td>
+                            <td>USA</td>
+                        </tr>
+                        <tr>
+                            <td>Apple (StoreKit)</td>
+                            <td>Subscription payments</td>
+                            <td>Managed by Apple, not accessible to us</td>
+                            <td>Global</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Data Processing Agreements (DPAs) are in place with Supabase and Resend. For transfers outside the EU (OpenAI, Resend), we rely on Standard Contractual Clauses (SCCs) as approved by the European Commission. Apple and Google operate under their own GDPR compliance frameworks, including SCCs and approved transfer mechanisms for international data transfers.</p>
+
+                <h2>9. Data Sharing</h2>
+                <p>We do not sell, rent, or trade your personal information. We share your data only in the following circumstances:</p>
                 <ul>
-                    <li><strong>With your consent:</strong> When you choose to share a project via link with collaborators</li>
-                    <li><strong>Service providers:</strong> With trusted third-party services that help us operate the App (e.g., cloud storage, authentication providers)</li>
-                    <li><strong>Legal requirements:</strong> When required by law or to protect our rights</li>
+                    <li><strong>With your consent:</strong> When you choose to share a project via link with collaborators.</li>
+                    <li><strong>Service providers:</strong> With the third-party processors listed above, solely to operate the App.</li>
+                    <li><strong>Legal requirements:</strong> When required by law, court order, or to protect our legal rights.</li>
                 </ul>
 
-                <h2>7. Your Rights</h2>
-                <p>You have the right to:</p>
+                <h2>10. Your Rights Under GDPR</h2>
+                <p>As a user in the European Union, you have the following rights regarding your personal data:</p>
                 <ul>
-                    <li>Access, update, or delete your account and associated data</li>
-                    <li>Export your content (lyrics, chords, and project data)</li>
-                    <li>Delete your account through the App's settings</li>
-                    <li>Opt out of non-essential data collection</li>
+                    <li><strong>Right of access (Art. 15):</strong> Request a copy of the personal data we hold about you.</li>
+                    <li><strong>Right to rectification (Art. 16):</strong> Request correction of inaccurate personal data.</li>
+                    <li><strong>Right to erasure (Art. 17):</strong> Request deletion of your personal data. You can delete your account directly in the App under Settings → Delete Account. This permanently removes all your data from our servers.</li>
+                    <li><strong>Right to restriction (Art. 18):</strong> Request that we limit how we process your data.</li>
+                    <li><strong>Right to data portability (Art. 20):</strong> Request your data in a structured, machine-readable format. You can export your projects as text from within the App.</li>
+                    <li><strong>Right to object (Art. 21):</strong> Object to processing based on legitimate interest.</li>
+                    <li><strong>Right to withdraw consent (Art. 7):</strong> Withdraw consent at any time for consent-based processing (e.g., stop using AI features).</li>
+                </ul>
+                <p>To exercise any of these rights, contact us at <a href="mailto:support@jamroom.eu">support@jamroom.eu</a>. We will respond within 30 days.</p>
+                <p>You also have the right to lodge a complaint with the Austrian Data Protection Authority (<em>Österreichische Datenschutzbehörde</em>): <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+
+                <h2>11. Data Retention</h2>
+                <p>We retain your data for as long as your account is active. When you delete your account:</p>
+                <ul>
+                    <li>All personal data, projects, voice recordings, and associated content are permanently deleted from our servers within 30 days.</li>
+                    <li>Local data on your device is cleared immediately.</li>
+                    <li>Backups containing your data are purged within 90 days.</li>
                 </ul>
 
-                <h2>8. Data Retention</h2>
-                <p>We retain your data for as long as your account is active. If you delete your account, we will delete your personal data within 30 days, except where we are required to retain it for legal purposes.</p>
+                <h2>12. Automated Decision-Making</h2>
+                <p>The App does not engage in automated decision-making or profiling that produces legal effects or similarly significantly affects you (Art. 22 GDPR). AI-powered features (line suggestions, rhyme finder) provide creative suggestions only and do not make decisions on your behalf.</p>
 
-                <h2>9. Children's Privacy</h2>
-                <p>The App is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected data from a child under 13, we will take steps to delete that information.</p>
+                <h2>13. Children's Privacy</h2>
+                <p>The App is not intended for children under the age of 14 (as set by the Austrian Datenschutzgesetz, implementing GDPR Art. 8). We do not knowingly collect personal information from children under 14. If we become aware that we have collected data from a child under 14, we will take steps to delete that information promptly.</p>
 
-                <h2>10. Changes to This Policy</h2>
-                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the App and updating the "Last updated" date above.</p>
+                <h2>14. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the updated policy within the App and updating the "Last updated" date above. Where changes affect processing based on your consent, we will seek your renewed consent before applying those changes.</p>
 
-                <h2>11. Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
-                <p class="contact-email">support@jamroom.app</p>
+                <h2>15. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, your personal data, or wish to exercise your rights, please contact us at:</p>
+                <p class="contact-email"><a href="mailto:support@jamroom.eu">support@jamroom.eu</a></p>
             </div>
         </div>
     </section>
