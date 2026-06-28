@@ -28,7 +28,7 @@
     <section class="privacy">
         <div class="container privacy-container">
             <h1>Privacy Policy</h1>
-            <p class="privacy-updated">Last updated: June 21, 2026</p>
+            <p class="privacy-updated">Last updated: June 28, 2026</p>
 
             <div class="privacy-content">
                 <h2>1. Introduction</h2>
@@ -65,7 +65,7 @@
                     <li>Feature usage limits (transcription minutes, AI suggestion count)</li>
                 </ul>
 
-                <p>We do not collect analytics, tracking data, device identifiers, or location data.</p>
+                <p>Within the App itself, we do not collect analytics, tracking data, device identifiers, or location data. Our marketing website (jamroom.eu) uses optional analytics cookies only if you consent — see <a href="#cookies">Section 14: Cookies &amp; Website Analytics</a>.</p>
 
                 <h2>4. Legal Basis for Processing (GDPR Art. 6)</h2>
                 <p>We process your personal data based on the following legal grounds:</p>
@@ -187,10 +187,44 @@
                 <h2>13. Children's Privacy</h2>
                 <p>The App is not intended for children under the age of 14 (as set by the Austrian Datenschutzgesetz, implementing GDPR Art. 8). We do not knowingly collect personal information from children under 14. If we become aware that we have collected data from a child under 14, we will take steps to delete that information promptly.</p>
 
-                <h2>14. Changes to This Policy</h2>
+                <h2 id="cookies">14. Cookies &amp; Website Analytics</h2>
+                <p>This section applies to our marketing website (jamroom.eu), not the App. The App itself does not use cookies.</p>
+
+                <h3>Strictly necessary</h3>
+                <p>Our website uses no strictly necessary cookies. To remember your cookie choice, we store a single value in your browser's local storage (<code>jamroom-cookie-consent</code>); this is not a cookie and is not used for tracking.</p>
+
+                <h3>Analytics cookies (consent required)</h3>
+                <p>If you click "Accept" on our cookie banner, we load <strong>Google Analytics 4</strong> to understand how visitors find and use our website (e.g. page views, traffic sources, country, device type). These cookies are <strong>not</strong> set unless you accept, and you can change or withdraw your choice at any time via the "Cookie settings" link in the website footer. We enable IP anonymization.</p>
+                <table class="privacy-table">
+                    <thead>
+                        <tr>
+                            <th>Cookie</th>
+                            <th>Provider</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>_ga</code></td>
+                            <td>Google Analytics</td>
+                            <td>Distinguishes unique visitors</td>
+                            <td>2 years</td>
+                        </tr>
+                        <tr>
+                            <td><code>_ga_&lt;ID&gt;</code></td>
+                            <td>Google Analytics</td>
+                            <td>Maintains session state</td>
+                            <td>2 years</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Legal basis:</strong> Consent (Art. 6(1)(a) GDPR and § 165(3) Austrian Telecommunications Act 2021 / ePrivacy). Google Analytics may transfer data to the United States; such transfers rely on Google's Standard Contractual Clauses and the EU–US Data Privacy Framework. You can read Google's practices at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+                <h2>15. Changes to This Policy</h2>
                 <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the updated policy within the App and updating the "Last updated" date above. Where changes affect processing based on your consent, we will seek your renewed consent before applying those changes.</p>
 
-                <h2>15. Contact Us</h2>
+                <h2>16. Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, your personal data, or wish to exercise your rights, please contact us at:</p>
                 <p class="contact-email"><a href="mailto:support@jamroom.eu">support@jamroom.eu</a></p>
             </div>
@@ -207,11 +241,13 @@
                 </div>
                 <div class="footer-links">
                     <a href="privacy.html">Privacy Policy</a>
+                    <a href="#" data-cookie-settings>Cookie settings</a>
                 </div>
             </div>
             <p class="footer-copy">&copy; 2026 Jam Room. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="consent.js" defer></script>
 </body>
 </html>

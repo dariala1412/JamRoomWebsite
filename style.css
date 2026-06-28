@@ -558,6 +558,103 @@ body {
     font-weight: 600;
 }
 
+/* ===== COOKIE BANNER ===== */
+#cookie-banner {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%) translateY(140%);
+    z-index: 1000;
+    width: calc(100% - 32px);
+    max-width: 720px;
+    background: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: 0 16px 50px rgba(36, 36, 49, 0.18);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+#cookie-banner.cookie-banner-visible {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.cookie-banner-inner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    flex-wrap: wrap;
+}
+
+.cookie-banner-text {
+    flex: 1;
+    min-width: 240px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cookie-banner-text a {
+    color: var(--coral);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cookie-banner-text a:hover {
+    text-decoration: underline;
+}
+
+.cookie-banner-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.cookie-btn-primary {
+    background: var(--coral);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(245, 102, 96, 0.3);
+}
+
+.cookie-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(245, 102, 96, 0.4);
+}
+
+.cookie-btn-secondary {
+    background: var(--bg-alt);
+    color: var(--text-primary);
+    border-color: var(--card-border);
+}
+
+.cookie-btn-secondary:hover {
+    transform: translateY(-2px);
+    background: #e4dcee;
+}
+
+@media (max-width: 480px) {
+    .cookie-banner-actions {
+        width: 100%;
+    }
+    .cookie-btn {
+        flex: 1;
+    }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .nav-links {
