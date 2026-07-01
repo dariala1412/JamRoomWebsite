@@ -244,14 +244,14 @@ body {
     text-decoration: none;
     padding: 14px 32px;
     border-radius: 60px;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: none;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 28px rgba(0,0,0,0.10);
 }
 
 .appstore-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 36px rgba(0,0,0,0.18);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.14);
 }
 
 .appstore-btn-logo {
