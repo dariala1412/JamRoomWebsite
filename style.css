@@ -328,6 +328,133 @@ body {
     margin-bottom: 60px;
 }
 
+/* ===== PHONE DEMO ===== */
+.phone-demo-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.phone-demo-text {
+    flex: 1;
+    max-width: 420px;
+}
+
+.phone-demo-text h2 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.phone-demo-text p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.phone-video {
+    position: relative;
+    flex-shrink: 0;
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* soft ambient glow behind the device */
+.phone-video::before {
+    content: '';
+    position: absolute;
+    inset: -12%;
+    background: radial-gradient(circle at 50% 45%, rgba(114, 111, 217, 0.28), rgba(168, 216, 234, 0.14) 45%, transparent 70%);
+    filter: blur(40px);
+    z-index: 0;
+}
+
+/* titanium outer rail — the thick visible band */
+.phone-bezel {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 3px;
+    border-radius: 50px;
+    background: linear-gradient(135deg,
+        #f4f3f0 0%,
+        #c7c5c0 16%,
+        #8c8a85 34%,
+        #dcdad5 52%,
+        #a09e99 68%,
+        #78766f 82%,
+        #cecbc5 100%);
+    box-shadow:
+        0 0 0 0.5px rgba(0, 0, 0, 0.22),
+        0 30px 64px rgba(60, 55, 80, 0.22),
+        0 10px 24px rgba(60, 55, 80, 0.12);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+}
+
+/* side buttons — left: action + volume up/down */
+.phone-bezel::before {
+    content: '';
+    position: absolute;
+    left: -1.5px;
+    top: 112px;
+    width: 2px;
+    height: 26px;
+    border-radius: 2px 0 0 2px;
+    background: linear-gradient(90deg, #6f6d67 0%, #b4b2ac 60%, #dedcd6 100%);
+    box-shadow:
+        0 44px 0 #9c9a94,
+        0 80px 0 #9c9a94;
+}
+
+/* right: power button */
+.phone-bezel::after {
+    content: '';
+    position: absolute;
+    right: -1.5px;
+    top: 148px;
+    width: 2px;
+    height: 60px;
+    border-radius: 0 2px 2px 0;
+    background: linear-gradient(270deg, #6f6d67 0%, #b4b2ac 60%, #dedcd6 100%);
+}
+
+/* thin black bezel between rail and screen */
+.phone-inner {
+    background: #050506;
+    border-radius: 47px;
+    padding: 6px;
+}
+
+.phone-inner video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 41px;
+}
+
+.phone-video:hover .phone-bezel {
+    transform: translateY(-10px);
+    box-shadow:
+        0 0 0 0.5px rgba(0, 0, 0, 0.22),
+        0 44px 88px rgba(60, 55, 80, 0.28),
+        0 14px 32px rgba(60, 55, 80, 0.14);
+}
+
+@media (max-width: 768px) {
+    .phone-demo-layout {
+        flex-direction: column;
+        gap: 48px;
+    }
+    .phone-demo-text {
+        text-align: center;
+    }
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
