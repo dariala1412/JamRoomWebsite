@@ -808,16 +808,14 @@ body {
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(60, 55, 80, 0.10), 0 2px 6px rgba(60, 55, 80, 0.06);
     transform: translateX(-50%) scale(0.82);
-    filter: blur(4px);
     opacity: 0;
     z-index: 0;
     pointer-events: none;
-    transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;
 }
 
 .ai-card.is-active {
     transform: translateX(-50%) scale(1);
-    filter: blur(0);
     opacity: 1;
     z-index: 3;
     pointer-events: auto;
@@ -829,7 +827,6 @@ body {
 
 .ai-card.is-prev {
     transform: translateX(calc(-50% - 300px)) scale(0.82);
-    filter: blur(4px);
     opacity: 0.55;
     z-index: 2;
     pointer-events: auto;
@@ -838,7 +835,6 @@ body {
 
 .ai-card.is-next {
     transform: translateX(calc(-50% + 300px)) scale(0.82);
-    filter: blur(4px);
     opacity: 0.55;
     z-index: 2;
     pointer-events: auto;
