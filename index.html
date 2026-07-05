@@ -57,16 +57,14 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <div class="features-header">
-                <h2>Everything you need to capture your music ideas</h2>
-            </div>
+
             <div class="feature-rows">
                 <div class="feature-block">
                     <div class="feature-block-media">
                         <div class="phone-video">
                             <div class="phone-bezel">
                                 <div class="phone-inner">
-                                    <video loop muted playsinline>
+                                    <video loop muted playsinline autoplay>
                                         <source src="assets/videos/demo.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -120,6 +118,49 @@
                         <span class="callout cl-right" style="top:15%;animation-delay:-0.4s">🎼 Key & Capo</span>
                         <span class="callout cl-right" style="top:33%;animation-delay:-1.2s"># Chords per section</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section -->
+    <section id="ai" class="ai-section">
+        <div class="container">
+            <div class="ai-header">
+                <span class="ai-eyebrow">Powered by AI</span>
+                <h2>Smart help, exactly when you need it</h2>
+                <p class="ai-subtitle">AI steps in at the friction points so you stay in the creative flow.</p>
+            </div>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-video">
+                        <video loop muted playsinline autoplay>
+                            <source src="assets/videos/ai-transcript.mp4" type="video/mp4">
+                        </video>
+                        <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
+                    </div>
+                    <h3>Voice to lyrics</h3>
+                    <p>Don't type — just record. Jam Room turns your voice memo into editable lyrics automatically.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-video">
+                        <video loop muted playsinline autoplay>
+                            <source src="assets/videos/ai-rhymes.mp4" type="video/mp4">
+                        </video>
+                        <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
+                    </div>
+                    <h3>Built-in rhyme finder</h3>
+                    <p>Find rhymes instantly while you write — no need to switch apps or break your flow.</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-card-video">
+                        <video loop muted playsinline autoplay>
+                            <source src="assets/videos/ai-line-suggestion.mp4" type="video/mp4">
+                        </video>
+                        <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
+                    </div>
+                    <h3>Suggest the next line</h3>
+                    <p>Stuck? Tap for a suggestion. AI suggests the next line in the same mood and rhythm.</p>
                 </div>
             </div>
         </div>
@@ -355,6 +396,21 @@
 
         requestAnimationFrame(animate);
     })();
+    </script>
+    <script>
+    document.querySelectorAll('.ai-card').forEach(function (card) {
+        var video = card.querySelector('video');
+        var bar   = card.querySelector('.ai-video-bar');
+        var rafId = null;
+        function tick() {
+            if (video.duration) { bar.style.width = (video.currentTime / video.duration * 100) + '%'; }
+            rafId = requestAnimationFrame(tick);
+        }
+        card.addEventListener('mouseenter', function () { video.play(); rafId = requestAnimationFrame(tick); });
+        card.addEventListener('mouseleave', function () {
+            video.pause(); video.currentTime = 0; bar.style.width = '0%'; cancelAnimationFrame(rafId);
+        });
+    });
     </script>
 </body>
 </html>
