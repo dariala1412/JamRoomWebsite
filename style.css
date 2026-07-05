@@ -925,6 +925,213 @@ body {
     line-height: 1.6;
 }
 
+/* ===== PRICING SECTION ===== */
+.pricing {
+    padding: 120px 0;
+    position: relative;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.pricing-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.pricing-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Feature comparison columns */
+.cmp2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 860px;
+    margin: 0 auto 48px;
+    align-items: stretch;
+}
+
+.cmp-col {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 32px 30px;
+    box-shadow: 0 8px 24px rgba(60, 55, 80, 0.08);
+}
+
+.cmp-col-pro {
+    border: 1.5px solid rgba(114, 111, 217, 0.30);
+    background: linear-gradient(180deg, rgba(114, 111, 217, 0.05), rgba(114, 111, 217, 0.01));
+}
+
+.cmp-head {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--card-border);
+    min-height: 132px;
+}
+
+.cmp-head-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.cmp-col-name {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.cmp-col-pro .cmp-col-name {
+    color: var(--indigo);
+}
+
+.cmp-price {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+.cmp-per {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0;
+    margin-left: 2px;
+}
+
+.cmp-badge {
+    display: inline-block;
+    background: var(--indigo);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+    letter-spacing: 0.04em;
+}
+
+.cmp-note {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.cmp-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cmp-list li {
+    position: relative;
+    padding-left: 30px;
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.cmp-list li.yes::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--indigo);
+    font-weight: 800;
+}
+
+.cmp-list li.no {
+    color: var(--text-tertiary);
+}
+
+.cmp-list li.no::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--text-tertiary);
+    font-weight: 800;
+}
+
+.cmp-list li strong {
+    color: var(--indigo);
+    font-weight: 700;
+}
+
+/* Monthly / Annual tabs in the Pro header */
+.buy-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background: var(--bg-alt);
+    border-radius: 12px;
+}
+
+.buy-tab {
+    padding: 7px 12px;
+    border: none;
+    background: transparent;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.buy-tab.active {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    box-shadow: 0 2px 6px rgba(60, 55, 80, 0.10);
+}
+
+/* single CTA */
+.buy {
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-single-cta {
+    align-self: center;
+}
+
+@media (max-width: 640px) {
+    .buy-grid {
+        grid-template-columns: 1fr;
+    }
+    .cmp2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 /* ===== FOOTER ===== */
 .footer {
     padding: 40px 0;
