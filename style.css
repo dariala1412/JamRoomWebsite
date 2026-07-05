@@ -854,6 +854,77 @@ body {
     padding: 0 24px;
 }
 
+/* ===== ESSENTIALS SECTION ===== */
+.essentials {
+    padding: 40px 0 120px;
+    position: relative;
+}
+
+.essentials-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.essentials-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.essentials-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.essentials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px 36px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .essentials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.essential-tile {
+    text-align: left;
+}
+
+.essential-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    border-radius: 14px;
+    background: rgba(114, 111, 217, 0.10);
+    margin-bottom: 16px;
+}
+
+.essential-tile h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.essential-tile p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 /* ===== FOOTER ===== */
 .footer {
     padding: 40px 0;
@@ -1307,6 +1378,11 @@ body {
 
     .ai-grid {
         grid-template-columns: 1fr;
+    }
+
+    .essentials-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
     }
 
     .features h2,
