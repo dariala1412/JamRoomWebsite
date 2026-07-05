@@ -1634,3 +1634,118 @@ body {
         font-size: 30px;
     }
 }
+
+/* Support / FAQ */
+.support {
+    padding: 120px 0;
+    position: relative;
+}
+
+.support-header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.support-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.support-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.support-faq {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 4px 24px;
+    transition: box-shadow 0.25s ease;
+}
+
+.faq-item[open] {
+    box-shadow: 0 8px 24px rgba(60,55,80,0.08);
+}
+
+.faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--indigo);
+    line-height: 1;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding: 0 0 20px;
+    margin: 0;
+}
+
+.support-contact {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.support-contact p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.support-contact-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.support-contact-btn:hover {
+    box-shadow: 0 8px 24px rgba(60,55,80,0.12);
+    transform: translateY(-1px);
+}
