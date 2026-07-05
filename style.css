@@ -306,7 +306,6 @@ body {
     position: relative;
 }
 
-.features h2,
 .instruments h2,
 .pro-header h2 {
     font-size: 36px;
@@ -328,31 +327,67 @@ body {
     margin-bottom: 60px;
 }
 
-/* ===== PHONE DEMO ===== */
-.phone-demo-layout {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
+/* ===== FEATURES HEADER ===== */
+.features-header {
+    text-align: left;
+    margin-bottom: 80px;
 }
 
-.phone-demo-text {
-    flex: 1;
-    max-width: 420px;
-}
-
-.phone-demo-text h2 {
+.features-header h2 {
     font-size: 42px;
     font-weight: 800;
     letter-spacing: -1px;
     color: var(--text-primary);
-    margin-bottom: 20px;
 }
 
-.phone-demo-text p {
+/* ===== FEATURE ROWS (alternating) ===== */
+.feature-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 140px;
+}
+
+.feature-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.feature-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.feature-block-text {
+    flex: 1;
+    max-width: 460px;
+}
+
+.feature-block-text h2 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.feature-lead {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--indigo);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.feature-block-text p {
     font-size: 17px;
     color: var(--text-secondary);
     line-height: 1.7;
+}
+
+.feature-block-media {
+    flex-shrink: 0;
 }
 
 .phone-video {
@@ -433,12 +468,93 @@ body {
         0 0 0 2px rgba(255, 255, 255, 0.45);  /* bright highlight on the titanium edge */
 }
 
-.phone-inner video {
+.phone-inner video,
+.phone-inner img {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 42px;
     box-shadow: 0 0 0 1px #3a3a3e;  /* thin dark-gray line on inner edge of black frame */
+}
+
+/* ===== CENTERED CALLOUT SHOWCASE ===== */
+.feature-showcase {
+    text-align: center;
+}
+
+.feature-showcase-text {
+    max-width: 600px;
+    margin: 0 auto 90px;
+}
+
+.phone-callouts {
+    overflow: visible;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.phone-video.phone-callouts:hover .phone-bezel {
+    transform: none !important;
+    transition: none !important;
+}
+
+/* connector lines drawn from each pill to a point on the screen */
+.callout-lines {
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: calc(100% + 400px);
+    height: 100%;
+    overflow: visible;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.callout-lines line {
+    stroke: var(--indigo);
+    stroke-width: 1.5;
+    stroke-opacity: 0.55;
+    vector-effect: non-scaling-stroke;
+}
+
+/* target dot on the screen */
+.cdot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--indigo);
+    opacity: 0.6;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+/* the pills */
+.callout {
+    position: absolute;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    background: #fff;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 40px;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    box-shadow: 0 8px 24px rgba(60, 55, 80, 0.16), 0 2px 6px rgba(60, 55, 80, 0.08);
+}
+
+.cl-left {
+    right: 100%;
+    margin-right: 26px;
+}
+
+.cl-right {
+    left: 100%;
+    margin-left: 26px;
 }
 
 .phone-video:hover .phone-bezel {
@@ -450,12 +566,17 @@ body {
 }
 
 @media (max-width: 768px) {
-    .phone-demo-layout {
-        flex-direction: column;
+    .feature-block {
+        flex-direction: column-reverse;
         gap: 48px;
     }
-    .phone-demo-text {
+    .feature-block-text {
         text-align: center;
+    }
+    .callout,
+    .callout-lines,
+    .cdot {
+        display: none;
     }
 }
 
