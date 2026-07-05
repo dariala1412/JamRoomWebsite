@@ -306,6 +306,7 @@ body {
     position: relative;
 }
 
+
 .instruments h2,
 .pro-header h2 {
     font-size: 36px;
@@ -384,6 +385,34 @@ body {
     font-size: 17px;
     color: var(--text-secondary);
     line-height: 1.7;
+}
+
+.feature-bullets {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-bullets li {
+    font-size: 16px;
+    color: var(--text-secondary);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.feature-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    opacity: 0.6;
 }
 
 .feature-block-media {
@@ -479,18 +508,28 @@ body {
 
 /* ===== CENTERED CALLOUT SHOWCASE ===== */
 .feature-showcase {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 260px;
+    width: calc(100vw - 48px);
+    max-width: 1220px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .feature-showcase-text {
-    max-width: 600px;
-    margin: 0 auto 90px;
+    max-width: 520px;
+    flex-shrink: 0;
+    margin: 0;
+    text-align: left;
 }
 
 .phone-callouts {
     overflow: visible;
+    flex-shrink: 0;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 200px;
 }
 
 .phone-video.phone-callouts:hover .phone-bezel {
