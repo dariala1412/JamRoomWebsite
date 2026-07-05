@@ -105,11 +105,11 @@
                         <span class="cdot" style="left:10.6%;top:54.6%"></span>
                         <span class="cdot" style="left:50.6%;top:18.1%"></span>
                         <span class="cdot" style="left:54.7%;top:30.2%"></span>
-                        <span class="callout cl-left"  style="top:15%">✦ Status tracking</span>
-                        <span class="callout cl-left"  style="top:30%">🏷️ Tag per section</span>
-                        <span class="callout cl-left"  style="top:53%">🎙️ Voice memos</span>
-                        <span class="callout cl-right" style="top:15%">🎼 Key & Capo</span>
-                        <span class="callout cl-right" style="top:33%"># Chords per section</span>
+                        <span class="callout cl-left"  style="top:15%;animation-delay:0s">✦ Status tracking</span>
+                        <span class="callout cl-left"  style="top:30%;animation-delay:-0.8s">🏷️ Tag per section</span>
+                        <span class="callout cl-left"  style="top:53%;animation-delay:-1.6s">🎙️ Voice memos</span>
+                        <span class="callout cl-right" style="top:15%;animation-delay:-0.4s">🎼 Key & Capo</span>
+                        <span class="callout cl-right" style="top:33%;animation-delay:-1.2s"># Chords per section</span>
                     </div>
                 </div>
             </div>
@@ -190,5 +190,40 @@
     </footer>
 
     <script src="consent.js" defer></script>
+    <script>
+    (function () {
+        // Match CSS: duration 3s, amplitude 4px, same delays as nth-child rules
+        const DURATION  = 3000;
+        const AMP_PX    = 4;
+        const DELAYS    = [0, -800, -1600, -400, -1200]; // ms, match inline animation-delay on pills
+        // Base y1 values (pill-side endpoints) matching the static SVG
+        const BASE_Y1   = [79.5, 159, 280.9, 79.5, 174.9];
+
+        const svg   = document.querySelector('.callout-lines');
+        const phone = document.querySelector('.phone-callouts');
+        if (!svg || !phone) return;
+
+        const lines = svg.querySelectorAll('line');
+
+        function animate(ts) {
+            // Scale px amplitude → SVG units (viewBox height 530 / actual element height)
+            const phoneH = phone.getBoundingClientRect().height || 530;
+            const amp    = AMP_PX * (530 / phoneH);
+
+            lines.forEach(function (line, i) {
+                // Positive modulo so negative delays wrap correctly
+                var t          = ((ts - DELAYS[i]) % DURATION + DURATION) % DURATION;
+                var normalized = t / DURATION;
+                // Same wave as CSS keyframe 0%→50%(−4px)→100%: half-cosine
+                var offset     = -amp * (1 - Math.cos(normalized * 2 * Math.PI)) / 2;
+                line.setAttribute('y1', BASE_Y1[i] + offset);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+    })();
+    </script>
 </body>
 </html>

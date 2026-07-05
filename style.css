@@ -532,7 +532,7 @@ body {
 /* the pills */
 @keyframes pill-float {
     0%, 100% { transform: translateY(-50%); }
-    50%       { transform: translateY(calc(-50% - 5px)); }
+    50%      { transform: translateY(calc(-50% - 4px)); }
 }
 
 .callout {
@@ -550,14 +550,9 @@ body {
     white-space: nowrap;
     transform: translateY(-50%);
     box-shadow: 0 8px 24px rgba(60, 55, 80, 0.16), 0 2px 6px rgba(60, 55, 80, 0.08);
-    animation: pill-float 4s ease-in-out infinite;
+    animation: pill-float 3s ease-in-out infinite;
 }
 
-.callout:nth-child(1) { animation-delay: 0s; }
-.callout:nth-child(2) { animation-delay: 0.8s; }
-.callout:nth-child(3) { animation-delay: 1.6s; }
-.callout:nth-child(4) { animation-delay: 0.4s; }
-.callout:nth-child(5) { animation-delay: 1.2s; }
 
 .cl-left {
     right: 100%;
