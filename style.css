@@ -379,7 +379,7 @@ body {
     position: relative;
     z-index: 1;
     width: 100%;
-    padding: 3px;
+    padding: 4px;
     border-radius: 50px;
     background: linear-gradient(135deg,
         #f4f3f0 0%,
@@ -427,7 +427,10 @@ body {
 .phone-inner {
     background: #050506;
     border-radius: 47px;
-    padding: 6px;
+    padding: 5px;
+    box-shadow:
+        0 0 0 1px #4a4a4e,                    /* thin dark-gray line outside the black */
+        0 0 0 2px rgba(255, 255, 255, 0.45);  /* bright highlight on the titanium edge */
 }
 
 .phone-inner video {
@@ -435,6 +438,7 @@ body {
     width: 100%;
     height: auto;
     border-radius: 41px;
+    box-shadow: 0 0 0 1px #3a3a3e;  /* thin dark-gray line on inner edge of black frame */
 }
 
 .phone-video:hover .phone-bezel {
