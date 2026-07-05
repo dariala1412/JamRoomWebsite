@@ -428,7 +428,7 @@ body {
         0 0 0 0.5px rgba(0, 0, 0, 0.22),
         0 30px 64px rgba(60, 55, 80, 0.22),
         0 10px 24px rgba(60, 55, 80, 0.12);
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
 }
 
 /* side buttons — left: action + volume up/down */
@@ -495,7 +495,12 @@ body {
 
 .phone-video.phone-callouts:hover .phone-bezel {
     transform: none !important;
-    transition: none !important;
+    transition: box-shadow 0.6s ease !important;
+    box-shadow:
+        0 0 0 0.5px rgba(0, 0, 0, 0.22),
+        0 0 18px 4px rgba(114, 111, 217, 0.28),
+        0 0 40px 8px rgba(114, 111, 217, 0.13),
+        0 30px 64px rgba(60, 55, 80, 0.20);
 }
 
 /* connector lines drawn from each pill to a point on the screen */
