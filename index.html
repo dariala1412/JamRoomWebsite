@@ -231,18 +231,20 @@
             <div class="cmp2">
                 <div class="cmp-col cmp-col-pro">
                     <div class="cmp-head">
-                        <span class="cmp-col-name">Free</span>
+                        <div class="cmp-head-top">
+                            <span class="cmp-col-name">Free</span>
+                        </div>
                         <span class="cmp-price">$0</span>
-                        <span class="cmp-note">Forever free · no account needed</span>
+                        <span class="cmp-note">No sign-up required</span>
                     </div>
                     <ul class="cmp-list">
                         <li class="yes">Unlimited Jams</li>
                         <li class="yes">Full lyrics editor, metronome, section labels</li>
                         <li class="yes">Auto chord recognition by playing</li>
                         <li class="yes">Unlimited voice memos, assigned to sections</li>
-                        <li class="yes">5 min/mo voice transcription</li>
-                        <li class="yes">10/mo line suggestions</li>
-                        <li class="yes">10/mo rhyme suggestions</li>
+                        <li class="limited">5 min/mo voice transcription</li>
+                        <li class="limited">10/mo line suggestions</li>
+                        <li class="limited">10/mo rhyme suggestions</li>
                     </ul>
                 </div>
                 <div class="cmp-col">
@@ -306,7 +308,7 @@
         var tabs = proCol.querySelectorAll('.buy-tab');
 
         var TERMS = {
-            monthly: { price: '$4.99', per: '/mo', note: '', badge: false },
+            monthly: { price: '$4.99', per: '/mo', note: 'Cancel anytime', badge: false },
             annual:  { price: '$2.50', per: '/mo', note: 'Billed $29.99/year · 🎁 3-day free trial', badge: true }
         };
 

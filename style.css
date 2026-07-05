@@ -990,6 +990,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
+    min-height: 38px;
 }
 
 .cmp-col-name {
@@ -1063,6 +1064,19 @@ body {
     top: 0;
     color: var(--indigo);
     font-weight: 800;
+}
+
+.cmp-list li.limited {
+    color: var(--text-primary);
+}
+
+.cmp-list li.limited::before {
+    content: '~';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--indigo);
+    font-weight: 700;
 }
 
 .cmp-list li.no {
