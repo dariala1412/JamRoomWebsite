@@ -25,7 +25,7 @@
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
-                <a href="#pro">Pro</a>
+                <a href="#ai">AI</a>
                 <a href="blog.html">Blog</a>
             </div>
         </div>
@@ -64,7 +64,7 @@
                         <div class="phone-video">
                             <div class="phone-bezel">
                                 <div class="phone-inner">
-                                    <video autoplay loop muted playsinline>
+                                    <video loop muted playsinline>
                                         <source src="assets/videos/demo.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -122,56 +122,44 @@
         </div>
     </section>
 
-<!-- AI Features / Pro Section -->
-    <section id="pro" class="pro-section">
+<!-- AI Section -->
+    <section id="ai" class="ai-section">
         <div class="container">
-            <div class="pro-header">
-                <span class="pro-badge">PRO</span>
-                <h2>Unlock the full power of Jam Room</h2>
-                <p class="section-subtitle">No commitment, cancel anytime</p>
+            <div class="ai-header">
+                <span class="ai-eyebrow">Powered by AI</span>
+                <h2>Smart help, exactly when you need it</h2>
+                <p class="ai-subtitle">AI steps in at the friction points so you stay in the creative flow.</p>
             </div>
-            <div class="pro-features-grid">
-                <div class="pro-feature">
-                    <span class="pro-feature-icon">🎙️</span>
-                    <div>
-                        <h4>1 Hour Voice Transcription</h4>
-                        <p>Convert voice memos to text every month</p>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-video">
+                        <video loop muted playsinline>
+                            <source src="assets/videos/ai-transcript.mp4" type="video/mp4">
+                        </video>
+                        <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
                     </div>
+                    <h3>Voice to lyrics</h3>
+                    <p>Don't type — just record. Jam Room turns your voice memo into editable lyrics automatically.</p>
                 </div>
-                <div class="pro-feature">
-                    <span class="pro-feature-icon">💡</span>
-                    <div>
-                        <h4>Unlimited Line Suggestions</h4>
-                        <p>AI-powered next line suggestions</p>
+                <div class="ai-card">
+                    <div class="ai-card-video">
+                        <video loop muted playsinline>
+                            <source src="assets/videos/ai-rhymes.mp4" type="video/mp4">
+                        </video>
+                        <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
                     </div>
+                    <h3>Built-in rhyme finder</h3>
+                    <p>Find rhymes instantly while you write — no need to switch apps or break your flow.</p>
                 </div>
-                <div class="pro-feature">
-                    <span class="pro-feature-icon">📝</span>
-                    <div>
-                        <h4>Unlimited Rhymes</h4>
-                        <p>Find the perfect rhyme in any language</p>
+                <div class="ai-card">
+                    <div class="ai-card-video">
+                        <video loop muted playsinline>
+                            <source src="assets/videos/ai-line-suggestion.mp4" type="video/mp4">
+                        </video>
+                        <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
                     </div>
-                </div>
-                <div class="pro-feature">
-                    <span class="pro-feature-icon">☁️</span>
-                    <div>
-                        <h4>Sync Across All Devices</h4>
-                        <p>Access your jams on all your devices</p>
-                    </div>
-                </div>
-                <div class="pro-feature">
-                    <span class="pro-feature-icon">📁</span>
-                    <div>
-                        <h4>Organize with Folders</h4>
-                        <p>Organize your projects your way</p>
-                    </div>
-                </div>
-                <div class="pro-feature">
-                    <span class="pro-feature-icon">🔗</span>
-                    <div>
-                        <h4>Share Projects via Link</h4>
-                        <p>Share jams with collaborators via link</p>
-                    </div>
+                    <h3>Suggest the next line</h3>
+                    <p>Stuck? Tap for a suggestion. AI suggests the next line in the same mood and rhythm.</p>
                 </div>
             </div>
         </div>
@@ -196,6 +184,32 @@
     </footer>
 
     <script src="consent.js" defer></script>
+    <script>
+    document.querySelectorAll('.ai-card').forEach(function (card) {
+        var video = card.querySelector('video');
+        var bar   = card.querySelector('.ai-video-bar');
+        var rafId = null;
+
+        function tick() {
+            if (video.duration) {
+                bar.style.width = (video.currentTime / video.duration * 100) + '%';
+            }
+            rafId = requestAnimationFrame(tick);
+        }
+
+        card.addEventListener('mouseenter', function () {
+            video.play();
+            rafId = requestAnimationFrame(tick);
+        });
+
+        card.addEventListener('mouseleave', function () {
+            video.pause();
+            video.currentTime = 0;
+            bar.style.width = '0%';
+            cancelAnimationFrame(rafId);
+        });
+    });
+    </script>
     <script>
     (function () {
         // Match CSS: duration 3s, amplitude 4px, same delays as nth-child rules
