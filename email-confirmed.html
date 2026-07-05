@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmed — Jam Room</title>
+    <link rel="icon" type="image/png" href="assets/images/appicon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .confirmed {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 24px;
+        }
+
+        .confirmed-mail {
+            width: 72px;
+            height: 72px;
+            stroke: var(--indigo);
+            stroke-width: 1.6;
+            fill: none;
+            margin-bottom: 28px;
+        }
+
+        .confirmed h1 {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.6px;
+            margin-bottom: 14px;
+        }
+
+        .confirmed p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 440px;
+            margin: 0;
+        }
+
+        .confirmed-open {
+            display: none;
+            margin-top: 32px;
+            padding: 15px 32px;
+            background: var(--indigo);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 14px;
+            box-shadow: 0 8px 22px rgba(114, 111, 217, 0.30);
+        }
+
+        @media (max-width: 768px) {
+            .confirmed-open {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global background orbs -->
+    <div class="page-bg">
+        <div class="orb orb-coral"></div>
+        <div class="orb orb-indigo"></div>
+        <div class="orb orb-purple"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-logo">
+                <img src="assets/images/jar_noback.png" alt="Jam Room" class="nav-icon">
+                <span>Jam Room</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#support">Support</a>
+                <a href="blog.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Confirmation -->
+    <section class="confirmed">
+        <svg class="confirmed-mail" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <polyline points="3 7 12 13 21 7"/>
+        </svg>
+        <h1>Email confirmed</h1>
+        <p>You're all set. Head back to Jam Room on your device to start writing.</p>
+        <a href="daridevil.MusicApp://" class="confirmed-open">Open Jam Room</a>
+    </section>
+
+</body>
+</html>
