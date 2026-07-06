@@ -84,6 +84,9 @@
                 <a href="index.html#support">Support</a>
                 <a href="blog.html">Blog</a>
             </div>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
@@ -97,6 +100,19 @@
         <p>You're all set. Head back to Jam Room on your device to start writing.</p>
         <a href="daridevil.MusicApp://" class="confirmed-open">Open Jam Room</a>
     </section>
+
+    <script>
+    (function () {
+        var toggle = document.querySelector('.nav-toggle');
+        var links = document.querySelector('.nav-links');
+        if (!toggle || !links) return;
+        toggle.addEventListener('click', function () {
+            var open = links.classList.toggle('open');
+            toggle.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+    })();
+    </script>
 
 </body>
 </html>
