@@ -147,6 +147,8 @@ body {
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
+    clip-path: inset(0);
+    -webkit-clip-path: inset(0);
 }
 
 .orb {
@@ -1749,27 +1751,47 @@ body {
 
     .nav-links {
         position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
+        top: 72px;
+        right: 16px;
+        left: auto;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 2px;
+        align-items: stretch;
+        gap: 4px;
+        min-width: 200px;
         background: var(--bg-card);
-        border-bottom: 1px solid var(--card-border);
-        box-shadow: 0 16px 40px rgba(60, 55, 80, 0.12);
-        padding: 12px 24px 20px;
-        display: none;
+        border: 1px solid var(--card-border);
+        border-radius: 18px;
+        box-shadow: 0 18px 48px rgba(60, 55, 80, 0.18);
+        padding: 10px;
+        display: flex;
+        transform-origin: top right;
+        opacity: 0;
+        transform: translateY(-8px) scale(0.96);
+        pointer-events: none;
+        transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.34, 1.4, 0.64, 1);
     }
 
     .nav-links.open {
-        display: flex;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
     }
 
     .nav-links a {
         width: 100%;
-        padding: 13px 0;
-        font-size: 16px;
+        padding: 12px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 12px;
+        color: var(--text-primary);
+        transition: background 0.18s, color 0.18s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:active,
+    .nav-links a.active {
+        background: rgba(114, 111, 217, 0.10);
+        color: var(--indigo);
     }
 
     .hero-content {
