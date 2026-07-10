@@ -429,30 +429,34 @@ body {
 
 .feature-bullets {
     list-style: none;
-    margin-top: 20px;
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
 }
 
 .feature-bullets li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
     font-size: 16px;
-    color: var(--text-secondary);
-    padding-left: 20px;
-    position: relative;
-    line-height: 1.5;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.4;
 }
 
-.feature-bullets li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 6px;
-    height: 6px;
+.fb-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background: var(--text-primary);
-    opacity: 0.6;
+    font-size: 17px;
+    line-height: 1;
+    background: rgba(114, 111, 217, 0.10);
+    box-shadow: inset 0 0 0 1px rgba(114, 111, 217, 0.12);
 }
 
 .feature-block-media {
