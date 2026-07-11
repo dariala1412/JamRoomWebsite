@@ -663,7 +663,7 @@ body {
 @media (max-width: 900px) {
     .feature-showcase {
         flex-direction: column;
-        gap: 48px;
+        gap: 24px;
         width: 100%;
         max-width: 100%;
         margin-left: 0;
@@ -675,8 +675,13 @@ body {
         text-align: center;
     }
     .feature-bullets {
-        display: inline-block;
+        display: flex;
         text-align: left;
+        margin-top: 8px;
+        gap: 10px;
+    }
+    .feature-lead {
+        margin-bottom: 0;
     }
     .phone-callouts {
         margin-left: 0;
