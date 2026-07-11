@@ -1459,6 +1459,19 @@ body {
     font-size: 13px;
 }
 
+.hero-cta-group {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-requirements {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
 /* ===== PRIVACY PAGE ===== */
 .privacy {
     padding-top: 120px;
