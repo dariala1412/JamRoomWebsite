@@ -661,6 +661,19 @@ body {
 }
 
 @media (max-width: 900px) {
+    .features {
+        overflow-x: clip;
+    }
+    .features > .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .phone-bezel {
+        box-shadow:
+            0 0 0 0.5px rgba(0, 0, 0, 0.22),
+            0 18px 32px rgba(60, 55, 80, 0.18),
+            0 6px 14px rgba(60, 55, 80, 0.10);
+    }
     .feature-showcase {
         flex-direction: column;
         gap: 24px;
