@@ -99,7 +99,12 @@
                 <p>Your data is stored securely using industry-standard practices:</p>
                 <ul>
                     <li><strong>Local storage:</strong> Data is stored on your device using Apple's SwiftData framework. If you use the App without an account, your data never leaves your device.</li>
-                    <li><strong>Cloud storage:</strong> Synced data (Pro feature) is stored on Supabase servers located in the <strong>European Union (Frankfurt, Germany)</strong>, encrypted at rest and in transit.</li>
+                    <li><strong>Cloud storage:</strong> Synced data (Pro feature) is stored encrypted at rest and in transit:
+                        <ul>
+                            <li>Your projects, lyrics, chords, and account information are stored on Supabase servers located in the <strong>European Union (Stockholm, Sweden)</strong>.</li>
+                            <li>Voice recordings are stored on Cloudflare R2 object storage located in <strong>Eastern Europe (EU)</strong>.</li>
+                        </ul>
+                    </li>
                     <li><strong>Authentication:</strong> Handled through secure third-party providers (Apple, Google) or encrypted credential storage via Supabase Auth.</li>
                     <li><strong>Email service:</strong> Transactional emails are sent via Resend, which processes your email address to deliver confirmation emails.</li>
                 </ul>
@@ -118,9 +123,15 @@
                     <tbody>
                         <tr>
                             <td>Supabase</td>
-                            <td>Cloud database, authentication, file storage</td>
-                            <td>Email, projects, lyrics, chords, voice recordings</td>
-                            <td>EU (Frankfurt)</td>
+                            <td>Cloud database, authentication</td>
+                            <td>Email, projects, lyrics, chords</td>
+                            <td>EU (Stockholm)</td>
+                        </tr>
+                        <tr>
+                            <td>Cloudflare R2</td>
+                            <td>Voice recording storage</td>
+                            <td>Voice recordings</td>
+                            <td>EU (Eastern Europe)</td>
                         </tr>
                         <tr>
                             <td>Apple Sign-In</td>
@@ -154,7 +165,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <p>Data Processing Agreements (DPAs) are in place with Supabase and Resend. For transfers outside the EU (OpenAI, Resend), we rely on Standard Contractual Clauses (SCCs) as approved by the European Commission. Apple and Google operate under their own GDPR compliance frameworks, including SCCs and approved transfer mechanisms for international data transfers.</p>
+                <p>Data Processing Agreements (DPAs) are in place with Supabase, Cloudflare, and Resend. For transfers outside the EU (OpenAI, Resend), we rely on Standard Contractual Clauses (SCCs) as approved by the European Commission. Apple and Google operate under their own GDPR compliance frameworks, including SCCs and approved transfer mechanisms for international data transfers.</p>
 
                 <h2>9. Data Sharing</h2>
                 <p>We do not sell, rent, or trade your personal information. We share your data only in the following circumstances:</p>
@@ -185,9 +196,9 @@
                 <h2>12. Data Retention</h2>
                 <p>We retain your data for as long as your account is active. When you delete your account:</p>
                 <ul>
-                    <li>All personal data, projects, voice recordings, and associated content are permanently deleted from our servers within 30 days.</li>
+                    <li>All personal data, projects, voice recordings, and associated content are permanently deleted from our live servers within 30 days.</li>
                     <li>Local data on your device is cleared immediately.</li>
-                    <li>Backups containing your data are purged within 90 days.</li>
+                    <li>Residual copies of your data may persist in our infrastructure provider's (Supabase) automated encrypted backups for a limited period. These backups are not accessed in normal operations and are overwritten on a rolling schedule — typically within 7 to 30 days, depending on our hosting plan — after which the data is permanently gone.</li>
                 </ul>
 
                 <h2>13. Automated Decision-Making</h2>
