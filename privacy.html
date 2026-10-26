@@ -32,7 +32,7 @@
     <section class="privacy">
         <div class="container privacy-container">
             <h1>Privacy Policy</h1>
-            <p class="privacy-updated">Last updated: June 28, 2026</p>
+            <p class="privacy-updated">Last updated: October 26, 2026</p>
 
             <div class="privacy-content">
                 <h2>1. Introduction</h2>
@@ -70,36 +70,40 @@
                     <li>Feature usage limits (transcription minutes, AI suggestion count)</li>
                 </ul>
 
-                <p>Within the App itself, we do not collect analytics, tracking data, device identifiers, or location data. Our marketing website (jamroom.eu) uses optional analytics cookies only if you consent — see <a href="#cookies">Section 15: Cookies &amp; Website Analytics</a>.</p>
+                <h3>Device Identifier</h3>
+                <p>If you sign in to an account, we generate a random device identifier (stored in your device's Keychain) and register it to your account. This is used solely to enforce the Free plan's one-device sync limit and to let you see and manage which device is currently syncing. It is not used for tracking or advertising.</p>
+
+                <p>Within the App itself, we do not collect analytics, tracking data, or location data. Our marketing website (jamroom.eu) uses optional analytics cookies only if you consent — see <a href="#cookies">Section 15: Cookies &amp; Website Analytics</a>.</p>
 
                 <h2>4. Legal Basis for Processing (GDPR Art. 6)</h2>
                 <p>We process your personal data based on the following legal grounds:</p>
                 <ul>
-                    <li><strong>Contract performance (Art. 6(1)(b)):</strong> To provide the App's core functionality — storing your projects, syncing data, managing your account and subscription.</li>
-                    <li><strong>Consent (Art. 6(1)(a)):</strong> For optional features such as AI-powered line suggestions and rhyme generation, which send your lyrics content to third-party AI providers for processing. You activate these features voluntarily.</li>
-                    <li><strong>Legitimate interest (Art. 6(1)(f)):</strong> To maintain security, prevent abuse, and improve the App.</li>
+                    <li><strong>Contract performance (Art. 6(1)(b)):</strong> To provide the App's core functionality — storing your projects, syncing data, managing your account, subscription, and your device's sync slot.</li>
+                    <li><strong>Consent (Art. 6(1)(a)):</strong> For optional features such as AI-powered voice transcription, line suggestions, and rhyme generation, which send your audio or lyrics content to third-party AI providers for processing. You activate these features voluntarily.</li>
+                    <li><strong>Legitimate interest (Art. 6(1)(f)):</strong> To maintain security, enforce fair-use limits, prevent abuse of our servers and AI features, and improve the App.</li>
                 </ul>
 
                 <h2>5. How We Use Your Information</h2>
                 <p>We use the information we collect to:</p>
                 <ul>
                     <li>Provide, maintain, and improve the App</li>
-                    <li>Sync your content across your devices (for Pro subscribers)</li>
-                    <li>Process voice recordings through on-device AI transcription</li>
+                    <li>Back up and sync your content — one device for Free accounts, unlimited devices for Pro subscribers</li>
+                    <li>Process voice recordings you submit for AI transcription</li>
                     <li>Provide AI-powered features such as line suggestions and rhyme finding</li>
+                    <li>Look up song artwork and metadata when you search for a song structure</li>
                     <li>Manage your account and subscription</li>
                     <li>Send transactional emails (e.g., email confirmation on sign-up)</li>
                 </ul>
 
                 <h2>6. Voice Recordings & AI Processing</h2>
-                <p>When you use the voice transcription feature, your audio recordings are processed using on-device AI technology (WhisperKit). Voice data is processed locally on your device and is <strong>not sent to external servers</strong> for transcription. Transcribed text is stored as part of your project data and synced to our servers only if you are a signed-in Pro subscriber.</p>
-                <p>AI-powered features (line suggestions, AI rhymes) send your lyrics text to third-party AI providers (OpenAI) for processing. This data is used solely to generate suggestions. OpenAI may retain API data for up to 30 days for abuse and safety monitoring, after which it is deleted. Your data is not used to train AI models.</p>
+                <p>When you turn on AI transcription for a voice memo, the recording is uploaded to our transcription provider, <strong>Gladia</strong>, through our own Cloudflare Worker gateway — your device never holds Gladia's credentials directly. Gladia converts the audio to text and returns it to the App; the resulting text is then stored as part of your project data like any other lyrics, and synced to our servers if you are signed in. If AI transcription is left off, voice memos are never sent anywhere for transcription.</p>
+                <p>AI-powered features (line suggestions, AI rhymes) send your lyrics text through the same gateway to third-party AI providers — <strong>Google (Gemini)</strong> and <strong>Groq</strong> — for processing. This data is used solely to generate the suggestion you requested and is not used to train AI models. We additionally rate-limit these requests per user to prevent automated abuse; see <a href="terms.html#ai">Section 9 of our Terms of Service</a> for the related fair-use limits on Pro's "unlimited" AI features.</p>
 
                 <h2>7. Data Storage & Security</h2>
                 <p>Your data is stored securely using industry-standard practices:</p>
                 <ul>
                     <li><strong>Local storage:</strong> Data is stored on your device using Apple's SwiftData framework. If you use the App without an account, your data never leaves your device.</li>
-                    <li><strong>Cloud storage:</strong> Synced data (Pro feature) is stored encrypted at rest and in transit:
+                    <li><strong>Cloud storage:</strong> Once you sign in, your data is backed up and synced (one device on Free, unlimited devices on Pro), stored encrypted at rest and in transit:
                         <ul>
                             <li>Your projects, lyrics, chords, and account information are stored on Supabase servers located in the <strong>European Union (Stockholm, Sweden)</strong>.</li>
                             <li>Voice recordings are stored on Cloudflare R2 object storage located in <strong>Eastern Europe (EU)</strong>.</li>
@@ -107,6 +111,7 @@
                     </li>
                     <li><strong>Authentication:</strong> Handled through secure third-party providers (Apple, Google) or encrypted credential storage via Supabase Auth.</li>
                     <li><strong>Email service:</strong> Transactional emails are sent via Resend, which processes your email address to deliver confirmation emails.</li>
+                    <li><strong>API gateway:</strong> Requests to our AI and transcription providers are proxied through our own Cloudflare Worker, which applies per-user rate limits and keeps provider API keys off your device.</li>
                 </ul>
 
                 <h2>8. Third-Party Services & Data Processors</h2>
@@ -146,10 +151,34 @@
                             <td>Global</td>
                         </tr>
                         <tr>
-                            <td>OpenAI</td>
+                            <td>Cloudflare Workers</td>
+                            <td>API gateway, rate limiting, rhyme dictionary</td>
+                            <td>Lyrics text, audio, request metadata (in transit, not stored by the gateway)</td>
+                            <td>EU-routed, global network</td>
+                        </tr>
+                        <tr>
+                            <td>Gladia</td>
+                            <td>Voice memo transcription (when you turn it on)</td>
+                            <td>Audio recording (per request)</td>
+                            <td>EU</td>
+                        </tr>
+                        <tr>
+                            <td>Google (Gemini)</td>
                             <td>AI line suggestions, AI rhymes</td>
                             <td>Lyrics text (per request, not stored)</td>
                             <td>USA</td>
+                        </tr>
+                        <tr>
+                            <td>Groq</td>
+                            <td>AI line suggestions, AI rhymes</td>
+                            <td>Lyrics text (per request, not stored)</td>
+                            <td>USA</td>
+                        </tr>
+                        <tr>
+                            <td>Spotify</td>
+                            <td>Song artwork and metadata lookup</td>
+                            <td>Song title you search for</td>
+                            <td>USA/EU</td>
                         </tr>
                         <tr>
                             <td>Resend</td>
@@ -165,7 +194,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <p>Data Processing Agreements (DPAs) are in place with Supabase, Cloudflare, and Resend. For transfers outside the EU (OpenAI, Resend), we rely on Standard Contractual Clauses (SCCs) as approved by the European Commission. Apple and Google operate under their own GDPR compliance frameworks, including SCCs and approved transfer mechanisms for international data transfers.</p>
+                <p>Data Processing Agreements (DPAs) are in place with Supabase, Cloudflare, Gladia, and Resend. For transfers outside the EU (Google, Groq, Resend), we rely on Standard Contractual Clauses (SCCs) as approved by the European Commission. Apple, Google, and Spotify operate under their own GDPR compliance frameworks, including SCCs and approved transfer mechanisms for international data transfers.</p>
 
                 <h2>9. Data Sharing</h2>
                 <p>We do not sell, rent, or trade your personal information. We share your data only in the following circumstances:</p>
@@ -177,7 +206,8 @@
 
                 <h2>10. User Content Confidentiality</h2>
                 <p>The content you create in the App — including lyrics, voice recordings, chord data, and song projects — is private and confidential. It belongs to you.</p>
-                <p>Our team does <strong>not</strong> view, access, or use your User Content, except where you explicitly request technical support that requires us to do so. The only routine exception is our AI-powered features (line suggestions and rhyme generation): when you use them, your lyrics text is sent to OpenAI <strong>solely</strong> to generate the output you requested, and for no other purpose. Your content is never used to train AI models or for advertising.</p>
+                <p>Our team does <strong>not</strong> view, access, or use your User Content, except where you explicitly request technical support that requires us to do so. The only routine exceptions are our AI-powered features (voice transcription, line suggestions, and rhyme generation): when you use them, the relevant audio or lyrics text is sent to our processors (Gladia, Google, Groq) <strong>solely</strong> to generate the output you requested, and for no other purpose. Your content is never used to train AI models or for advertising.</p>
+                <p>If you sign in, answers and entries you save in Creative Tools (Check-In reflections, mood check-ins, and exercise drafts you choose to keep in the Archive) are backed up and synced like the rest of your project data, under the same confidentiality terms as your lyrics.</p>
 
                 <h2>11. Your Rights Under GDPR</h2>
                 <p>As a user in the European Union, you have the following rights regarding your personal data:</p>
@@ -186,7 +216,7 @@
                     <li><strong>Right to rectification (Art. 16):</strong> Request correction of inaccurate personal data.</li>
                     <li><strong>Right to erasure (Art. 17):</strong> Request deletion of your personal data. You can delete your account directly in the App under Settings → Delete Account. This permanently removes all your data from our servers.</li>
                     <li><strong>Right to restriction (Art. 18):</strong> Request that we limit how we process your data.</li>
-                    <li><strong>Right to data portability (Art. 20):</strong> Request your data in a structured, machine-readable format. You can export your projects as text from within the App.</li>
+                    <li><strong>Right to data portability (Art. 20):</strong> Request your data in a structured, machine-readable format. You can export your projects' lyrics as text and your voice memos as audio files from within the App.</li>
                     <li><strong>Right to object (Art. 21):</strong> Object to processing based on legitimate interest.</li>
                     <li><strong>Right to withdraw consent (Art. 7):</strong> Withdraw consent at any time for consent-based processing (e.g., stop using AI features).</li>
                 </ul>
