@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Jam Room - Music Notepad</title>
+    <title>Jam Room: Songwriting Notes</title>
     <link rel="icon" type="image/png" href="assets/images/appicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +21,7 @@
         <div class="nav-content">
             <a href="/" class="nav-logo">
                 <img src="assets/images/jar_noback.png" alt="Jam Room" class="nav-icon">
-                <span>Jam Room - Music Notepad</span>
+                <span>Jam Room: Songwriting Notes</span>
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
@@ -88,13 +88,14 @@
                         <h2>A clear structure for every Jam</h2>
                         <p class="feature-lead">One tidy home for your song.</p>
                         <ul class="feature-bullets">
-                            <li><span class="fb-icon">✦</span>Track song progress: Spark, Unfolding, Settled</li>
-                            <li><span class="fb-icon">🎼</span>Set key and capo per project</li>
-                            <li><span class="fb-icon">🏷️</span>Clear labels for every song section</li>
-                            <li><span class="fb-icon">🎵</span>Section-based chords selection</li>
-                            <li><span class="fb-icon">🎶</span>Melody line per section</li>
-                            <li><span class="fb-icon">🎙️</span>Record voice memos per section or assign them later</li>
-                            <li><span class="fb-icon">↩︎</span>Undo and redo changes in a Jam</li>
+                            <li><span class="fb-icon">🏷️</span>A song is sections — verse, chorus, bridge, or your own label</li>
+                            <li><span class="fb-icon">🎵</span>Each section keeps its own chords and melody</li>
+                            <li><span class="fb-icon">📜</span>Lead sheet view puts chords and notes above the words</li>
+                            <li><span class="fb-icon">🎙️</span>Voice memos clip to the section they belong to</li>
+                            <li><span class="fb-icon">♥</span>Mark your best takes as favorites</li>
+                            <li><span class="fb-icon">✦</span>Spark, Unfolding, Settled — see where a song stands</li>
+                            <li><span class="fb-icon">🎼</span>Key, capo and tempo, set once for the whole jam</li>
+                            <li><span class="fb-icon">⇅</span>Reorder sections freely, undo anything</li>
                         </ul>
                     </div>
 
@@ -103,10 +104,12 @@
                             <!-- left pills → dots (phone x-axis 0..270) -->
                             <line x1="-90" y1="79.5"  x2="21.6"  y2="119.3"/>
                             <line x1="-90" y1="159"   x2="21.6"  y2="166.9"/>
-                            <line x1="-90" y1="280.9" x2="28.6"  y2="289.4"/>
+                            <line x1="-90" y1="298"   x2="30.0"  y2="296.1"/>
+                            <line x1="-90" y1="466.4" x2="27.6"  y2="482.4"/>
                             <!-- right pills → dots -->
-                            <line x1="360" y1="79.5"  x2="136.6" y2="95.9"/>
-                            <line x1="360" y1="174.9" x2="147.7" y2="160.1"/>
+                            <line x1="380" y1="79.5"  x2="154.6" y2="99.2"/>
+                            <line x1="380" y1="190"   x2="154.7" y2="168.4"/>
+                            <line x1="380" y1="461.1" x2="243.5" y2="476.5"/>
                         </svg>
                         <div class="phone-bezel">
                             <div class="phone-inner">
@@ -115,14 +118,18 @@
                         </div>
                         <span class="cdot" style="left:8%;top:22.5%"></span>
                         <span class="cdot" style="left:8%;top:31.5%"></span>
-                        <span class="cdot" style="left:10.6%;top:54.6%"></span>
-                        <span class="cdot" style="left:50.6%;top:18.1%"></span>
-                        <span class="cdot" style="left:54.7%;top:30.2%"></span>
+                        <span class="cdot" style="left:11.1%;top:55.9%"></span>
+                        <span class="cdot" style="left:57.3%;top:18.7%"></span>
+                        <span class="cdot" style="left:57.3%;top:31.8%"></span>
+                        <span class="cdot" style="left:10.2%;top:91%"></span>
+                        <span class="cdot" style="left:90.2%;top:89.9%"></span>
                         <span class="callout cl-left"  style="top:15%;animation-delay:0s">✦ Status tracking</span>
                         <span class="callout cl-left cl-labels"  style="top:30%;animation-delay:-0.8s">🏷️ Section labels</span>
                         <span class="callout cl-left cl-memos"  style="top:53%;animation-delay:-1.6s">🎙️ Voice memos</span>
+                        <span class="callout cl-left"  style="top:88%;animation-delay:-0.6s">✨ Creative Tools</span>
                         <span class="callout cl-right" style="top:15%;animation-delay:-0.4s">🎼 Key & Capo</span>
                         <span class="callout cl-right" style="top:33%;animation-delay:-1.2s"># Chords per section</span>
+                        <span class="callout cl-right" style="top:87%;animation-delay:-1s">🎚️ Parallel Takes</span>
                     </div>
                 </div>
             </div>
@@ -351,7 +358,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <img src="assets/images/appicon.png" alt="Jam Room" class="footer-icon">
-                    <span>Jam Room - Music Notepad</span>
+                    <span>Jam Room: Songwriting Notes</span>
                 </div>
                 <div class="footer-links">
                     <a href="privacy.html">Privacy Policy</a>
@@ -397,9 +404,9 @@
         // Match CSS: duration 3s, amplitude 4px, same delays as nth-child rules
         const DURATION  = 3000;
         const AMP_PX    = 4;
-        const DELAYS    = [0, -800, -1600, -400, -1200]; // ms, match inline animation-delay on pills
+        const DELAYS    = [0, -800, -1600, -600, -400, -1200, -1000]; // ms, match inline animation-delay on pills
         // Base y1 values (pill-side endpoints) matching the static SVG
-        const BASE_Y1   = [79.5, 159, 280.9, 79.5, 174.9];
+        const BASE_Y1   = [79.5, 159, 298, 466.4, 79.5, 190, 461.1];
 
         const svg   = document.querySelector('.callout-lines');
         const phone = document.querySelector('.phone-callouts');
