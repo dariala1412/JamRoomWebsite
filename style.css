@@ -1737,9 +1737,111 @@ body {
     margin-bottom: 18px;
 }
 
+.post-content ol {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-left: 24px;
+    margin-bottom: 18px;
+}
+
+.post-content li {
+    margin-bottom: 8px;
+}
+
+.post-content h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 28px;
+    margin-bottom: 8px;
+}
+
+.post-content h3 .post-book-author {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
 .post-content strong {
     color: var(--text-primary);
 }
+
+/* ===== BOOK ENTRIES (blog) ===== */
+.book {
+    margin-top: 44px;
+}
+
+.book-text h3 {
+    margin-top: 0;
+}
+
+.book-quote {
+    position: relative;
+    background: rgba(36, 36, 49, 0.025);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 22px 26px 20px 54px;
+    margin: 22px 0 20px;
+}
+
+/* decorative opening quote mark */
+.book-quote::before {
+    content: '\201C';
+    position: absolute;
+    left: 18px;
+    top: 14px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--text-primary);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.book-quote p {
+    margin: 0;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+.book-quote cite {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+    .book-quote {
+        padding: 20px 20px 18px 44px;
+    }
+
+    .book-quote::before {
+        font-size: 44px;
+        left: 14px;
+        top: 12px;
+    }
+}
+
+.book-link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--indigo);
+    text-decoration: none;
+}
+
+.book-link:hover {
+    text-decoration: underline;
+}
+
 
 .post-content blockquote {
     border-left: 3px solid var(--coral);
