@@ -67,13 +67,19 @@ body {
 }
 
 .nav-content {
-    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 64px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 56px;
 }
 
 .nav-logo {
@@ -1887,6 +1893,102 @@ body {
     text-decoration: underline;
 }
 
+
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switch {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.lang-btn:hover {
+    border-color: rgba(114, 111, 217, 0.4);
+    background: rgba(114, 111, 217, 0.06);
+}
+
+.lang-btn svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+}
+
+.lang-btn .lang-chev {
+    width: 13px;
+    height: 13px;
+    opacity: 0.5;
+    transition: transform 0.18s ease;
+}
+
+.lang-btn[aria-expanded="true"] .lang-chev {
+    transform: rotate(180deg);
+}
+
+.lang-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 152px;
+    background: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(36, 36, 49, 0.12);
+    padding: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+    z-index: 1200;
+}
+
+.lang-switch.open .lang-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-menu a {
+    display: block;
+    padding: 9px 13px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.lang-menu a:hover {
+    background: rgba(114, 111, 217, 0.08);
+    color: var(--text-primary);
+}
+
+.lang-menu a.is-active {
+    color: var(--indigo);
+    font-weight: 700;
+    background: rgba(114, 111, 217, 0.09);
+}
+
+@media (max-width: 900px) {
+    .lang-switch {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+}
 
 /* ===== PODCAST CARDS ===== */
 .tier {

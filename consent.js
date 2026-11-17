@@ -151,3 +151,35 @@
         initNav();
     }
 })();
+
+/* Language switcher dropdown */
+(function () {
+    function initLang() {
+        var wrap = document.querySelector(".lang-switch");
+        if (!wrap) return;
+        var btn = wrap.querySelector(".lang-btn");
+        if (!btn) return;
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            var open = wrap.classList.toggle("open");
+            btn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        document.addEventListener("click", function (e) {
+            if (!wrap.contains(e.target)) {
+                wrap.classList.remove("open");
+                btn.setAttribute("aria-expanded", "false");
+            }
+        });
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                wrap.classList.remove("open");
+                btn.setAttribute("aria-expanded", "false");
+            }
+        });
+    }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initLang);
+    } else {
+        initLang();
+    }
+})();

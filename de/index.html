@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Jam Room: Songwriting Notes</title>
+    <link rel="icon" type="image/png" href="../assets/images/appicon.png">
+    <link rel="alternate" hreflang="en" href="https://jamroom.eu/index.html">
+    <link rel="alternate" hreflang="de" href="https://jamroom.eu/de/index.html">
+    <link rel="alternate" hreflang="uk" href="https://jamroom.eu/uk/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://jamroom.eu/index.html">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <!-- Global background orbs -->
+    <div class="page-bg">
+        <div class="orb orb-coral"></div>
+        <div class="orb orb-indigo"></div>
+        <div class="orb orb-purple"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="../assets/images/jar_noback.png" alt="Jam Room" class="nav-icon">
+                <span>Jam Room: Songwriting Notes</span>
+            </a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#features">Funktionen</a>
+                    <a href="#pricing">Preise</a>
+                    <a href="#support">Support</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="lang-switch">
+                    <button class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Sprache"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.9 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14A7.98 7.98 0 0 1 4 12c0-.69.1-1.36.26-2h3.38a16.5 16.5 0 0 0 0 4H4.26zm.84 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.1 16zm2.95-8H5.1a7.99 7.99 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.05 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.6 14.6 0 0 1 0-4h4.68a14.6 14.6 0 0 1 0 4zm.23 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a7.99 7.99 0 0 1-4.33 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38c.16.64.26 1.31.26 2 0 .69-.1 1.36-.26 2h-3.38z"/></svg><span>DE</span><svg class="lang-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
+                    <div class="lang-menu">
+                        <a href="../index.html" lang="en" hreflang="en">English</a>
+                        <a href="index.html" lang="de" hreflang="de" class="is-active">Deutsch</a>
+                        <a href="../uk/index.html" lang="uk" hreflang="uk">Українська</a>
+                    </div>
+                </div>
+                <button class="nav-toggle" aria-label="Menü" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Jam Room</h1>
+                    <p class="hero-tagline">Gute Ideen warten nicht.</p>
+                    <p class="hero-description">Alles, was du beim Songschreiben brauchst, an einem Ort. Jam Room ersetzt den Stapel an Apps und Tools, mit dem du dich sonst beim Schreiben herumschlägst.</p>
+                    <div class="hero-cta-group">
+                        <a href="https://apps.apple.com/at/app/jam-room-songwriting-notes/id6784209155?l=en-GB" class="appstore-btn">
+                            <svg class="appstore-btn-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#1d2b3a"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.15 1.26-2.13 3.75.03 2.98 2.6 3.97 2.63 3.98l-.05.14c-.24.73-.54 1.44-.9 2.11zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            <span class="appstore-btn-text">
+                                <span class="appstore-btn-sub">Laden im</span>
+                                <span class="appstore-btn-main">App Store</span>
+                            </span>
+                        </a>
+                        <p class="hero-requirements">🍎 iOS 17+ · iPhone &amp; iPad</p>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="../mockups/main%20view.png" alt="Hauptbildschirm von Jam Room" class="hero-phone">
+                </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+
+                <div class="feature-rows">
+                    <div class="feature-block">
+                        <div class="feature-block-media">
+                            <div class="phone-video">
+                                <div class="phone-bezel">
+                                    <div class="phone-inner">
+                                        <video loop muted playsinline autoplay>
+                                            <source src="../assets/videos/demo.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-block-text">
+                            <h2>Ideen sofort festhalten</h2>
+                            <p class="feature-lead">Ideen warten nicht — und du solltest es auch nicht.</p>
+                            <p>Sobald die Inspiration da ist, schreibst du direkt vom Startbildschirm los oder nimmst eine Sprachnotiz auf. Kein Projekt anlegen, keine Datei benennen. Du hältst einfach den Moment fest, und Jam Room macht automatisch ein neues Songprojekt daraus.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-showcase">
+                        <div class="feature-block-text feature-showcase-text">
+                            <h2>Klare Struktur für jeden Jam</h2>
+                            <p class="feature-lead">Ein aufgeräumtes Zuhause für deinen Song.</p>
+                            <ul class="feature-bullets">
+                                <li><span class="fb-icon">🏷️</span>Ein Song besteht aus Teilen — Strophe, Refrain, Bridge oder dein eigenes Label</li>
+                                <li><span class="fb-icon">🎵</span>Jeder Songteil hat seine eigenen Akkorde und Melodie</li>
+                                <li><span class="fb-icon">📜</span>Die Leadsheet-Ansicht setzt Akkorde und Noten über den Text</li>
+                                <li><span class="fb-icon">🎙️</span>Sprachnotizen hängen an dem Songteil, zu dem sie gehören</li>
+                                <li><span class="fb-icon">♥</span>Markiere deine besten Takes als Favoriten</li>
+                                <li><span class="fb-icon">✦</span>Funke, In Arbeit, Fertig — sieh, wo ein Song gerade steht</li>
+                                <li><span class="fb-icon">🎼</span>Tonart, Capo und Tempo: einmal setzen, gilt für den ganzen Jam</li>
+                                <li><span class="fb-icon">⇅</span>Songteile frei umsortieren, alles rückgängig machen</li>
+                            </ul>
+                        </div>
+
+                        <div class="phone-video phone-callouts">
+                            <svg class="callout-lines" viewBox="-200 0 670 530" preserveAspectRatio="none">
+                                <!-- left pills → dots (phone x-axis 0..270) -->
+                                <line x1="-90" y1="79.5"  x2="21.6"  y2="119.3"/>
+                                <line x1="-90" y1="159"   x2="21.6"  y2="166.9"/>
+                                <line x1="-90" y1="298"   x2="30.0"  y2="296.1"/>
+                                <line x1="-90" y1="466.4" x2="27.6"  y2="482.4"/>
+                                <!-- right pills → dots -->
+                                <line x1="380" y1="79.5"  x2="154.6" y2="99.2"/>
+                                <line x1="380" y1="190"   x2="154.7" y2="168.4"/>
+                                <line x1="380" y1="461.1" x2="243.5" y2="476.5"/>
+                            </svg>
+                            <div class="phone-bezel">
+                                <div class="phone-inner">
+                                    <img src="../mockups/song-editor.jpeg" alt="Song-Editor von Jam Room mit Text, Akkorden und Sprachnotizen">
+                                </div>
+                            </div>
+                            <span class="cdot" style="left:8%;top:22.5%"></span>
+                            <span class="cdot" style="left:8%;top:31.5%"></span>
+                            <span class="cdot" style="left:11.1%;top:55.9%"></span>
+                            <span class="cdot" style="left:57.3%;top:18.7%"></span>
+                            <span class="cdot" style="left:57.3%;top:31.8%"></span>
+                            <span class="cdot" style="left:10.2%;top:91%"></span>
+                            <span class="cdot" style="left:90.2%;top:89.9%"></span>
+                            <span class="callout cl-left"  style="top:15%;animation-delay:0s">✦ Status im Blick</span>
+                            <span class="callout cl-left cl-labels"  style="top:30%;animation-delay:-0.8s">🏷️ Songteil-Labels</span>
+                            <span class="callout cl-left cl-memos"  style="top:53%;animation-delay:-1.6s">🎙️ Sprachnotizen</span>
+                            <span class="callout cl-left"  style="top:88%;animation-delay:-0.6s">✨ Kreativ-Tools</span>
+                            <span class="callout cl-right" style="top:15%;animation-delay:-0.4s">🎼 Tonart &amp; Capo</span>
+                            <span class="callout cl-right" style="top:33%;animation-delay:-1.2s"># Akkorde pro Songteil</span>
+                            <span class="callout cl-right" style="top:87%;animation-delay:-1s">🎚️ Parallele Takes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section -->
+    <section id="ai" class="ai-section">
+        <div class="container">
+            <div class="ai-header">
+                <span class="ai-eyebrow">Mit KI</span>
+                <h2>Schlaue Hilfe, genau dann, wenn du sie brauchst</h2>
+                <p class="ai-subtitle">Die KI springt an den zähen Stellen ein, damit du im Flow bleibst.</p>
+            </div>
+            <div class="ai-carousel">
+                <button type="button" class="ai-nav ai-prev" aria-label="Zurück">‹</button>
+                <div class="ai-track">
+                    <div class="ai-card">
+                        <div class="ai-card-video">
+                            <video muted playsinline>
+                                <source src="../assets/videos/ai-transcript.mp4" type="video/mp4">
+                            </video>
+                            <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
+                        </div>
+                        <h3>Stimme wird Songtext</h3>
+                        <p>Nicht tippen — einfach singen. Jam Room macht aus deiner Sprachnotiz automatisch einen bearbeitbaren Text.</p>
+                    </div>
+                    <div class="ai-card">
+                        <div class="ai-card-video">
+                            <video muted playsinline>
+                                <source src="../assets/videos/ai-rhymes.mp4" type="video/mp4">
+                            </video>
+                            <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
+                        </div>
+                        <h3>Reimsuche direkt eingebaut</h3>
+                        <p>Finde Reime sofort beim Schreiben — ohne App-Wechsel, ohne deinen Flow zu unterbrechen.</p>
+                    </div>
+                    <div class="ai-card">
+                        <div class="ai-card-video">
+                            <video muted playsinline>
+                                <source src="../assets/videos/ai-line-suggestion.mp4" type="video/mp4">
+                            </video>
+                            <div class="ai-video-progress"><div class="ai-video-bar"></div></div>
+                        </div>
+                        <h3>Vorschlag für die nächste Zeile</h3>
+                        <p>Hängst du fest? Einmal tippen, und die KI schlägt die nächste Zeile vor — in derselben Stimmung und im selben Rhythmus.</p>
+                    </div>
+                </div>
+                <button type="button" class="ai-nav ai-next" aria-label="Weiter">›</button>
+                <div class="ai-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Essentials Section -->
+    <section class="essentials">
+        <div class="container">
+            <div class="essentials-header">
+                <h2>Gebaut fürs echte Songschreiben</h2>
+                <p class="essentials-subtitle">Die kleinen Dinge im Alltag, die dich schreiben lassen statt herumfummeln.</p>
+            </div>
+            <div class="essentials-grid">
+                <div class="essential-tile" data-emoji="☁️">
+                    <span class="essential-icon">☁️</span>
+                    <h3>Sync über alle Geräte</h3>
+                    <p>Mach auf jedem Gerät genau dort weiter, wo du aufgehört hast.</p>
+                </div>
+                <div class="essential-tile" data-emoji="📁">
+                    <span class="essential-icon">📁</span>
+                    <h3>Ordnung mit Ordnern</h3>
+                    <p>Gruppiere deine Projekte so, wie es für dich Sinn ergibt.</p>
+                </div>
+                <div class="essential-tile" data-emoji="🔗">
+                    <span class="essential-icon">🔗</span>
+                    <h3>Per Link teilen</h3>
+                    <p>Schick einen Jam mit einem Tipp an deine Band oder deine Co-Autorin.</p>
+                </div>
+                <div class="essential-tile" data-emoji="🎸">
+                    <span class="essential-icon">🎸</span>
+                    <h3>Akkorde &amp; Melodie automatisch erkannt</h3>
+                    <p>Spiel oder summ — live oder aufgenommen. Jam Room erkennt es sofort.</p>
+                </div>
+                <div class="essential-tile" data-emoji="🎡">
+                    <span class="essential-icon">🎡</span>
+                    <h3>Wisse, welcher Akkord als Nächstes kommt</h3>
+                    <p>Quintenzirkel, diatonische Akkordräder, Dreiklänge und Septakkorde über vier Tonleitern — nicht mehr raten, welcher Akkord passt, sondern sehen.</p>
+                </div>
+                <div class="essential-tile" data-emoji="🎵">
+                    <span class="essential-icon">🎵</span>
+                    <h3>Metronom integriert</h3>
+                    <p>Bleib im Takt, während du spielst und schreibst.</p>
+                </div>
+                <div class="essential-tile" data-emoji="🎚️">
+                    <span class="essential-icon">🎚️</span>
+                    <h3>Mehrspuraufnahme</h3>
+                    <p>Leg Gesangstakes, Harmonien und Begleitinstrumente über deine ursprüngliche Idee.</p>
+                </div>
+                <div class="essential-tile" data-emoji="✨">
+                    <span class="essential-icon">✨</span>
+                    <h3>Kreativ-Tools</h3>
+                    <p>Geführte Reflexionen, Modi und Übungen für die Momente, in denen nichts geht.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>Einfache, ehrliche Preise</h2>
+                <p class="pricing-subtitle">Alles, was du zum Songschreiben brauchst, ist gratis. Auf Pro umsteigen kannst du, wenn du mehr willst.</p>
+            </div>
+
+            <!-- Feature comparison columns -->
+            <div class="cmp2">
+                <div class="cmp-col cmp-col-pro">
+                    <div class="cmp-head">
+                        <div class="cmp-head-top">
+                            <span class="cmp-col-name">Gratis</span>
+                        </div>
+                        <span class="cmp-price">$0</span>
+                        <span class="cmp-note">Gratis-Konto, keine Zahlung nötig</span>
+                    </div>
+                    <ul class="cmp-list">
+                        <li class="yes">Unbegrenzt viele Jams</li>
+                        <li class="yes">Voller Texteditor, Metronom, Songteil-Labels</li>
+                        <li class="yes">Akkorde &amp; Melodie automatisch beim Spielen erkennen</li>
+                        <li class="limited">4 Kreativ-Tools</li>
+                        <li class="limited">Backup &amp; Sync — 1 Gerät gleichzeitig</li>
+                        <li class="limited">60 Min. Speicher für Sprachnotizen</li>
+                        <li class="limited">Parallele Takes — 2 Gesangsspuren, 1 Akkord- + 1 Melodiespur</li>
+                        <li class="limited">10 Zeilenvorschläge/Monat</li>
+                        <li class="limited">10 Reimvorschläge/Monat</li>
+                        <li class="no">Sprachtranskription</li>
+                    </ul>
+                </div>
+                <div class="cmp-col">
+                    <div class="cmp-head">
+                        <div class="cmp-head-top">
+                            <span class="cmp-col-name">Pro</span>
+                            <div class="buy-tabs">
+                                <button type="button" class="buy-tab" data-term="monthly">Monatlich</button>
+                                <button type="button" class="buy-tab active" data-term="annual">Jährlich · 50 % sparen</button>
+                            </div>
+                        </div>
+                        <span class="cmp-price"><span data-price>$2.50</span><span class="cmp-per" data-per>/Mon.</span><span class="cmp-badge" data-badge>Bestes Angebot</span></span>
+                        <span class="cmp-note" data-note>Abrechnung $29.99/Jahr · 🎁 3 Tage gratis testen</span>
+                    </div>
+                    <ul class="cmp-list">
+                        <li class="yes">Alles aus Gratis</li>
+                        <li class="yes">Alle Kreativ-Tools</li>
+                        <li class="yes">Sync über beliebig viele Geräte</li>
+                        <li class="yes">Ordner für deine Projekte</li>
+                        <li class="yes">Projekt per Link teilen</li>
+                        <li class="yes"><strong>Unbegrenzter</strong> Speicher für Sprachnotizen</li>
+                        <li class="yes"><strong>Unbegrenzt</strong> parallele Takes und 30+ Instrumente</li>
+                        <li class="yes"><strong>60 Min./Monat</strong> Sprachtranskription</li>
+                        <li class="yes"><strong>Unbegrenzt*</strong> Zeilenvorschläge</li>
+                        <li class="yes"><strong>Unbegrenzt*</strong> Reimvorschläge</li>
+                    </ul>
+                    <p class="cmp-footnote">* Es gilt ein großzügiges Fair-Use-Limit, das den Dienst vor automatisiertem Missbrauch schützt — mehr dazu in unseren <a href="terms.html#ai">Nutzungsbedingungen</a>.</p>
+                </div>
+            </div>
+
+            <!-- Purchase -->
+            <div class="buy">
+                <div class="hero-cta-group">
+                    <a href="https://apps.apple.com/at/app/jam-room-songwriting-notes/id6784209155?l=en-GB" class="appstore-btn buy-single-cta">
+                        <svg class="appstore-btn-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#1d2b3a"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.15 1.26-2.13 3.75.03 2.98 2.6 3.97 2.63 3.98l-.05.14c-.24.73-.54 1.44-.9 2.11zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        <span class="appstore-btn-text"><span class="appstore-btn-sub">Laden im</span><span class="appstore-btn-main">App Store</span></span>
+                    </a>
+                    <p class="hero-requirements">🍎 iOS 17+ · iPhone &amp; iPad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support -->
+    <section id="support" class="support">
+        <div class="container">
+            <div class="support-header">
+                <h2>Fragen? Wir helfen gern</h2>
+                <p class="support-subtitle">Schau dir die häufigsten Fragen unten an oder schreib uns einfach — wir antworten meist innerhalb eines Tages.</p>
+            </div>
+            <div class="support-faq">
+                <details class="faq-item">
+                    <summary>Brauche ich ein Konto, und kostet der Gratis-Tarif etwas?</summary>
+                    <p>Jam Room bittet dich, dich mit Apple, Google oder einer E-Mail-Adresse anzumelden — nur so bleiben deine Jams gesichert, falls dein Handy abhandenkommt. Der Gratis-Tarif ist wirklich gratis: keine Zahlungsdaten, kein Zeitlimit, keine Werbung.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Welche Geräte unterstützt Jam Room?</summary>
+                    <p>Jam Room läuft auf iPhone und iPad ab iOS 17. Eine Android-Version ist geplant. Mit Pro synchronisieren sich deine Jams über beliebig viele Apple-Geräte; im Gratis-Tarif bist du auf einem Gerät gleichzeitig synchron — meldest du dich woanders an, wird das zum aktiven Gerät, und das erste synchronisiert nicht mehr, bis du zurückwechselst oder auf Pro umsteigst.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Funktioniert es ohne Internet?</summary>
+                    <p>Ja. Schreiben, Aufnehmen, Akkord- und Melodieerkennung sowie das Metronom funktionieren offline, und deine Änderungen synchronisieren sich automatisch, sobald du wieder online bist. Nur die KI-Funktionen — Transkription, Zeilenvorschläge und Reime — brauchen eine Verbindung.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Komme ich mit meinen Songs auch wieder aus Jam Room raus?</summary>
+                    <p>Immer. Exportiere deine Texte als Text und deine Sprachnotizen als Audiodateien, direkt wohin du willst auf deinem Gerät — ohne Abo und ohne Hintertür.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Was passiert mit meinen Songs, wenn ich Pro nicht mehr zahle?</summary>
+                    <p>Nichts wird gelöscht. Dir bleiben alle Jams, Aufnahmen und Ordner, und du kannst sie weiterhin öffnen und bearbeiten — es gelten einfach wieder die Grenzen des Gratis-Tarifs, also Sync auf einem Gerät und die monatlichen Limits für KI-Vorschläge.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Funktioniert die Reimsuche auch auf Deutsch?</summary>
+                    <p>Jam Room und seine Reimwörterbücher funktionieren auf Englisch, Ukrainisch, Deutsch, Spanisch, Französisch, Italienisch, Portugiesisch und Polnisch.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Gibt es eine Gratis-Testphase, und kann ich kündigen?</summary>
+                    <p>Beim Jahrestarif kannst du 3 Tage gratis testen. Du kannst jederzeit in deinen App Store-Abo-Einstellungen kündigen und Pro bis zum Ende des bezahlten Zeitraums weiternutzen.</p>
+                </details>
+            </div>
+            <div class="support-contact">
+                <p>Brauchst du noch Hilfe?</p>
+                <a href="mailto:support@jamroom.eu" class="support-contact-btn">E-Mail an support@jamroom.eu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../assets/images/appicon.png" alt="Jam Room" class="footer-icon">
+                    <span>Jam Room: Songwriting Notes</span>
+                </div>
+                <div class="footer-links">
+                    <a href="../privacy.html">Datenschutz</a>
+                    <a href="../terms.html">Nutzungsbedingungen</a>
+                    <a href="../imprint.html">Impressum</a>
+                    <a href="#" data-cookie-settings>Cookie-Einstellungen</a>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2026 Jam Room. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="../consent.js" defer></script>
+    <script>
+    (function () {
+        var proCol = document.querySelector('.cmp2 .cmp-col:last-child');
+        if (!proCol) return;
+
+        var tabs = proCol.querySelectorAll('.buy-tab');
+
+        var TERMS = {
+            monthly: { price: '$4.99', per: '/Mon.', note: 'Jederzeit kündbar', badge: false },
+            annual:  { price: '$2.50', per: '/Mon.', note: 'Abrechnung $29.99/Jahr · 🎁 3 Tage gratis testen', badge: true }
+        };
+
+        var badge = proCol.querySelector('[data-badge]');
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var term = tab.getAttribute('data-term');
+                tabs.forEach(function (t) { t.classList.toggle('active', t === tab); });
+                var data = TERMS[term];
+                proCol.querySelector('[data-price]').textContent = data.price;
+                proCol.querySelector('[data-per]').textContent = data.per;
+                proCol.querySelector('[data-note]').textContent = data.note;
+                badge.style.display = data.badge ? '' : 'none';
+            });
+        });
+    })();
+    </script>
+    <script>
+    (function () {
+        // Match CSS: duration 3s, amplitude 4px, same delays as nth-child rules
+        const DURATION  = 3000;
+        const AMP_PX    = 4;
+        const DELAYS    = [0, -800, -1600, -600, -400, -1200, -1000]; // ms, match inline animation-delay on pills
+        // Base y1 values (pill-side endpoints) matching the static SVG
+        const BASE_Y1   = [79.5, 159, 298, 466.4, 79.5, 190, 461.1];
+
+        const svg   = document.querySelector('.callout-lines');
+        const phone = document.querySelector('.phone-callouts');
+        if (!svg || !phone) return;
+
+        const lines = svg.querySelectorAll('line');
+
+        function animate(ts) {
+            // Scale px amplitude → SVG units (viewBox height 530 / actual element height)
+            const phoneH = phone.getBoundingClientRect().height || 530;
+            const amp    = AMP_PX * (530 / phoneH);
+
+            lines.forEach(function (line, i) {
+                // Positive modulo so negative delays wrap correctly
+                var t          = ((ts - DELAYS[i]) % DURATION + DURATION) % DURATION;
+                var normalized = t / DURATION;
+                // Same wave as CSS keyframe 0%→50%(−4px)→100%: half-cosine
+                var offset     = -amp * (1 - Math.cos(normalized * 2 * Math.PI)) / 2;
+                line.setAttribute('y1', BASE_Y1[i] + offset);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+    })();
+    </script>
+    <script>
+    (function () {
+        var carousel = document.querySelector('.ai-carousel');
+        if (!carousel) return;
+
+        var cards = Array.prototype.slice.call(carousel.querySelectorAll('.ai-card'));
+        var dotsWrap = carousel.querySelector('.ai-dots');
+        var n = cards.length;
+        var active = 0;
+        var rafId = null;
+
+        // Build dots
+        var dots = cards.map(function (card, i) {
+            var dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'ai-dot';
+            dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+            dot.addEventListener('click', function () { go(i); });
+            dotsWrap.appendChild(dot);
+            return dot;
+        });
+
+        function progressTick() {
+            var video = cards[active].querySelector('video');
+            var bar = cards[active].querySelector('.ai-video-bar');
+            if (video.duration) { bar.style.width = (video.currentTime / video.duration * 100) + '%'; }
+            rafId = requestAnimationFrame(progressTick);
+        }
+
+        function render() {
+            cards.forEach(function (card, i) {
+                var rel = ((i - active) % n + n) % n;
+                card.classList.remove('is-active', 'is-prev', 'is-next');
+                var video = card.querySelector('video');
+                var bar = card.querySelector('.ai-video-bar');
+                if (rel === 0) {
+                    card.classList.add('is-active');
+                    video.currentTime = 0;
+                    bar.style.width = '0%';
+                    video.play();
+                } else {
+                    card.classList.add(rel === 1 ? 'is-next' : 'is-prev');
+                    video.pause();
+                    video.currentTime = 0;
+                    bar.style.width = '0%';
+                }
+            });
+            dots.forEach(function (dot, i) { dot.classList.toggle('is-active', i === active); });
+
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(progressTick);
+        }
+
+        function go(i) { active = ((i % n) + n) % n; render(); }
+
+        carousel.querySelector('.ai-prev').addEventListener('click', function () { go(active - 1); });
+        carousel.querySelector('.ai-next').addEventListener('click', function () { go(active + 1); });
+
+        cards.forEach(function (card, i) {
+            card.querySelector('video').addEventListener('ended', function () {
+                if (i === active) { go(active + 1); }
+            });
+        });
+
+        cards.forEach(function (card, i) {
+            card.addEventListener('click', function () {
+                if (card.classList.contains('is-prev')) { go(active - 1); }
+                else if (card.classList.contains('is-next')) { go(active + 1); }
+            });
+        });
+
+        render();
+    })();
+    </script>
+</body>
+</html>
