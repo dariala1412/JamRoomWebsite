@@ -1620,12 +1620,15 @@ body {
 
 .blog-card-tag {
     align-self: flex-start;
-    background: rgba(114, 111, 217, 0.12);
-    color: var(--indigo);
-    padding: 4px 14px;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(36, 36, 49, 0.18);
+    padding: 3px 13px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
     margin-bottom: 12px;
 }
 
@@ -1690,12 +1693,15 @@ body {
 
 .post-tag {
     display: inline-block;
-    background: rgba(114, 111, 217, 0.12);
-    color: var(--indigo);
-    padding: 4px 14px;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(36, 36, 49, 0.18);
+    padding: 3px 13px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
     margin-bottom: 16px;
 }
 
@@ -1881,6 +1887,35 @@ body {
     text-decoration: underline;
 }
 
+
+/* ===== POST DIAGRAMS ===== */
+.post-figure {
+    margin: 30px 0 34px;
+    background: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    padding: 24px 22px 18px;
+}
+
+.post-figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.post-figure figcaption {
+    margin-top: 16px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-tertiary);
+    text-align: center;
+}
+
+.post-figure .fig-label {
+    font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-weight: 600;
+}
 
 .post-content blockquote {
     border-left: 3px solid var(--coral);
