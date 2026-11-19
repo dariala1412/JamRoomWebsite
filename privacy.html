@@ -32,7 +32,7 @@
     <section class="privacy">
         <div class="container privacy-container">
             <h1>Privacy Policy</h1>
-            <p class="privacy-updated">Last updated: November 1, 2026</p>
+            <p class="privacy-updated">Last updated: November 19, 2026</p>
 
             <div class="privacy-content">
                 <h2>1. Introduction</h2>
@@ -78,10 +78,12 @@
                 <ul>
                     <li>Subscription status (Free or Pro)</li>
                     <li>Feature usage limits (transcription minutes, AI suggestion count)</li>
+                    <li>Purchase details for your subscription: which store it was purchased through (Apple App Store or Google Play), the product purchased, purchase and expiry dates, and whether the subscription is currently active. For Google Play purchases we also store the purchase token used to verify the purchase with Google, and a flag marking test/sandbox purchases. Google Play purchases are tagged with your Jam Room account ID (a random identifier, not your name or email) so we can match the purchase to the right account; this identifier is not used for advertising or tracking. One subscription record is kept per account and unlocks Pro on both iOS and Android, regardless of which store you purchased through.</li>
                 </ul>
+                <p>Payments are processed by Apple (App Store) or Google (Google Play), depending on where you subscribe — we never see your card or bank details. You can manage or cancel your subscription in the App Store (iOS: Settings → your name → Subscriptions) or in Google Play (Android: Play Store → Payments &amp; subscriptions), and refunds are handled directly by Apple or Google, whichever store processed the purchase.</p>
 
                 <h3>Device Identifier</h3>
-                <p>If you sign in to an account, we generate a random device identifier (stored in your device's Keychain) and register it to your account. This is used solely to enforce the Free plan's one-device sync limit and to let you see and manage which device is currently syncing. It is not used for tracking or advertising.</p>
+                <p>If you sign in to an account, we generate a random device identifier — stored in your device's Keychain on iOS, or in the app's private storage on Android — and register it to your account. This is used solely to enforce the Free plan's one-device sync limit and to let you see and manage which device is currently syncing. It is not used for tracking or advertising.</p>
 
                 <p>Within the App itself, we do not collect analytics, tracking data, or location data. Our marketing website (jamroom.eu) uses optional analytics cookies only if you consent — see <a href="#cookies">Section 15: Cookies &amp; Website Analytics</a>.</p>
 
@@ -112,7 +114,7 @@
                 <h2>7. Data Storage & Security</h2>
                 <p>Your data is stored securely using industry-standard practices:</p>
                 <ul>
-                    <li><strong>Local storage:</strong> Data is always stored on your device first, using Apple's SwiftData framework. Using the App requires a free account, but data does not leave your device unless you are signed in and backup/sync is active.</li>
+                    <li><strong>Local storage:</strong> Data is always stored on your device first — using Apple's SwiftData framework on iOS, or the app's private storage and a local database on Android. Sign-in tokens are stored encrypted on your device on both platforms. Using the App requires a free account, but data does not leave your device unless you are signed in and backup/sync is active.</li>
                     <li><strong>Cloud storage:</strong> Once you sign in, your data is backed up and synced (one device on Free, unlimited devices on Pro), stored encrypted at rest and in transit:
                         <ul>
                             <li>Your projects, lyrics, chords, and account information are stored on Supabase servers located in the <strong>European Union (Stockholm, Sweden)</strong>.</li>
@@ -214,6 +216,12 @@
                             <td>Managed by Apple, not accessible to us</td>
                             <td>Global</td>
                         </tr>
+                        <tr>
+                            <td>Google Play (Play Billing / Play Developer API)</td>
+                            <td>Subscription payments and purchase verification</td>
+                            <td>Purchase token, product ID, your account identifier; payment details are managed by Google and not accessible to us</td>
+                            <td>Global</td>
+                        </tr>
                     </tbody>
                 </table>
                 <p>Data Processing Agreements (DPAs) are in place with Supabase, Cloudflare, Gladia, and Resend. For transfers outside the EU (Google, Groq, Resend), we rely on Standard Contractual Clauses (SCCs) as approved by the European Commission. Apple, Google, and Spotify operate under their own GDPR compliance frameworks, including SCCs and approved transfer mechanisms for international data transfers.</p>
@@ -248,7 +256,7 @@
                 <h2>12. Data Retention</h2>
                 <p>We retain your data for as long as your account is active. When you delete your account:</p>
                 <ul>
-                    <li>All personal data, projects, voice recordings, and associated content are permanently deleted from our live servers within 30 days.</li>
+                    <li>All personal data, projects, voice recordings, subscription records, and associated content are permanently deleted from our live servers within 30 days.</li>
                     <li>Local data on your device is cleared immediately.</li>
                     <li>Residual copies of your data may persist in our infrastructure provider's (Supabase) automated encrypted backups for a limited period. These backups are not accessed in normal operations and are overwritten on a rolling schedule — typically within 7 to 30 days, depending on our hosting plan — after which the data is permanently gone.</li>
                 </ul>
